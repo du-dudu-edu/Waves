@@ -128,7 +128,7 @@ nav ul li a {
 
 @media (max-width: 400px) {
     .menu-item {
-        width:80%; /* Ocupa a tela inteira */
+        width:35%; /* Ocupa a tela inteira */
     }
         .contato-item span {
            display:none;
