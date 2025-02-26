@@ -87,8 +87,24 @@ document.addEventListener("DOMContentLoaded", function () {
            "Café Gelado":["Iced Caramel:. . . . . . . . . . . . . . .R$:14,99","Mocaccino Gelado:. . . . . . . . .R$:14,99","Affogato:. . . . . . . . . . . . . . . . . . . R$:15,00","Iced Latte:. . . . . . . . . . . . . . . . . .R$:12,99"],
            "Batata":["Batata P:. . . . . . . . . . . . . . . . . . . . .R$:8,00","Batata G:. . . . . . . . . . . . . . . . . . . R$:12,00","Batata Waves:. . . . . . . . . . . . . R$:38,00","Batata Maluca:. . . . . . . . . . . . R$:33,00"],
            "Waves Burguer":["Pão,carne,alface e maionese"," Carne ou frango:. . . . . . . . . . . . .13,99","Picanha:. . . . . . . . . . . . . .16,99"],
-           
-              
+           "X Burguer":["Pão, carne, queijo, alface e maionese","Carne ou frango: 15,50","Picanha: 18,50"]
+           "X-Bacon":["Pão, carne, bacon, alface e maionese","Carne ou frango:17,50","Picanha:20,50"],
+           "X-Calabresa":["Pão, carne, calabresa, alface e maionese","Carne ou frango:17,50","Picanha:20,50"],
+           "X-Egg":["Pão, carne, ovo, alface e maionese","Carne ou frango: 19,99","Picanha: 22,99"],
+           "Cheddar Prime":["Pão,carne picanha 120g,cheddar cremoso e cebola caramelizada","Carne ou frango: 16,50","Picanha: 19,50"],
+           "X-tudo":["Pão, carne, queijo, ovo, bacon, calabresa, alface e maionese","Carne ou frango: 23,50","Picanha: 26,50"],
+           "Duplo X-Burguer":["Pão,2 carnes,2 queijos, alface e maionese","Carne ou frango: 25,50","Picanha: 28,50"],
+           "Waves Montanha":["2 Pães, 2 carnes, 2 queijos, ovo, bacon, calabresa, alface e maionese","Carne ou frango: 27,99","Picanha: 30,99"],
+           "Big Waves":["Pão,3 carnes,3 queijos,ovo,alface e maionese","Carne ou frango: 29,99","Picanha: 32,99"],
+           "Waves Premium Artesanal":["Pão brioche,carne de picanha 180g,queijo cheddar, bacon triturado, salada e molho especial","Normal: 34,99","Combo: 46,99"],
+           "Delicia de Frango":["Pão árabe, filé de frango grelhado, queijo, tomate e alface","R$:20,50"],
+           "Gula de Filé":["Pão árabe, filé bovino grelhado, queijo, cebola grelhada no shoyu,tomate e alface","R$:27,50"],
+           "Combo 1":["Waves burguer(Carne ou frango),refri lata, batata","Normal:R$: 19,99","Picaha R$:22,99"],
+           "Combo 2":["X-Calabresa ou X-Bacon(Carne ou frango),refri lata, batata P","Normal:R$: 24,99","Picaha R$:27,99"],
+           "Combo 3":["X-Tudo(Carne ou frango),refri lata, batata P","Normal:R$:29,99","Picaha R$:32,99"],
+           "Combo 4":["Big Waves(Carne ou frango),refri lata, batata P","Normal:R$:35,99","Picaha R$:38,99"],
+           "Combo 5":["2 X-Tudo(Carne ou frango),refri lata, batata P","Normal:R$:55,99","Picaha R$:58,99"],
+           "Combo 6":["2 X-Tudo(Carne ou frango),2 Milk Shake 300ml","Normal:R$:49,99","Picaha R$:52,99"]
         
         };
 
