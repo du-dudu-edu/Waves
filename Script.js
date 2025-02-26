@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
            "Café Gelado":["Iced Caramel:. . . . . . . . . . . . . . .R$:14,99","Mocaccino Gelado:. . . . . . . . .R$:14,99","Affogato:. . . . . . . . . . . . . . . . . . . R$:15,00","Iced Latte:. . . . . . . . . . . . . . . . . .R$:12,99"],
            "Batata":["Batata P:. . . . . . . . . . . . . . . . . . . . .R$:8,00","Batata G:. . . . . . . . . . . . . . . . . . . R$:12,00","Batata Waves:. . . . . . . . . . . . . R$:38,00","Batata Maluca:. . . . . . . . . . . . R$:33,00"],
            "Waves Burguer":["Pão,carne,alface e maionese"," Carne ou frango:. . . . . . . . . . . . .13,99","Picanha:. . . . . . . . . . . . . .16,99"],
-           "X Burguer":["Pão, carne, queijo, alface e maionese","Carne ou frango: 15,50","Picanha: 18,50"]
+           "X-Burguer":["Pão, carne, queijo, alface e maionese","Carne ou frango: 15,50","Picanha: 18,50"]
            "X-Bacon":["Pão, carne, bacon, alface e maionese","Carne ou frango:17,50","Picanha:20,50"],
            "X-Calabresa":["Pão, carne, calabresa, alface e maionese","Carne ou frango:17,50","Picanha:20,50"],
            "X-Egg":["Pão, carne, ovo, alface e maionese","Carne ou frango: 19,99","Picanha: 22,99"],
