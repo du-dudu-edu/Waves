@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waves</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1 class="destaque"><a class="lista-titulo" href="index.html">Waves</a></h1>
+        <nav> 
+        <ul>
+          <li><a href="#casquinhas" class="scroll-link">Casquinhas</a></li>
+          <li><a href="#sorvete" class="scroll-link">Sorvetes</li>
+          <li><a href="#milkshake" class="scroll-link">Milkshakes</li> 
+        </ul>
+        </nav>
+           <div class="contatos">
+           <div class="contato-item">
+           <a href="https://wa.me/5522997302115" target="_blank">
+               <span>Entre em contato conosco</span>  
+               <img src="img/whatsapp.png" alt="WhatsApp">
+           </a>
+           </div>
+           <div class="contato-item">
+           <a href="https://www.instagram.com/wavescoffeicecream" target="_blank">
+               <span>Conheça nosso instagram</span>
+               <img src="img/instagram.png" alt="Instagram">
+           </a>
+           </div>
+    </header>
+   
+    <section class id="casquinhas"><h2 class="titulo-box">casquinhas</h2></section>
+    <!-- Seção do Cardápio -->
+    <section class="container">
+
+       
+        <div class="menu-item" onclick="mostrarSabores('Casquinhas')"> 
+            <div class="logo-container">W</div>
+            <img src="img/casquinha.JPG" alt="casquinha">
+            <h3>Casquinhas</h3>
+            <p>Toque para ver as opções</p>
+            <p class="descricao">Açaí, Baunilha, Mista</p>
+        </div>
+
+    </section>
+    <section class id="sorvete"><h2 class="titulo-box">Sorvetes</h2></section>
+    <section class="container">
+       
+        <div class="menu-item" onclick="mostrarSabores('Açaí')">
+            <div class="logo-container">W</div>
+            <img src="img/açai.JPG" alt="casquinha">
+            <h3>Açaí no copo</h3> 
+            <p>Toque para ver as opções</p>
+        </div>
+
+        <div class="menu-item">
+            <div class="logo-container">W</div>
+            <img src="img/peti gatou.JPG" alt="casquinha">
+            <h3>Petit Gateau</h3>
+            <p></p>
+            <p>R$:16,50</p>
+        </div>  
+       
+        <div class="menu-item" onclick="mostrarSabores('Waves Max')">
+            <div class="logo-container">W</div>
+            <img src="img/peti gatou.JPG" alt="casquinha">
+            <h3>Waves Max</h3>
+            <p>Toque para ver as opções</p>
+            <p>R$:15,99</p>
+        </div>  
+
+        
+
+  
+
+    </section>     
+    <section class id="milkshake"><h2 class="titulo-box">Milk Shakes e Sundaes</h2></section>
+    <section class="container">
+        
+        <div class="menu-item" onclick="mostrarSabores('Milk Shake')">
+            <div class="logo-container">W</div>
+            <img src="img/peti gatou.JPG" alt="casquinha">
+            <h3>Milk Shakes</h3>
+            <p>Toque para ver as opções</p>
+            <p>300ml R$:15,50</p>
+            <p>500ml R$:18,50</p>
+            <p>700ml R$:20,50</p>
+        </div>
+        
+        <div class="menu-item" onclick="mostrarSabores('Sundaes')">
+            <div class="logo-container">W</div>
+            <img src="img/peti gatou.JPG" alt="casquinha">
+            <h3>Sundaes</h3>
+            <p>Toque para ver as opções</p>
+        </div>
+        
+
+        <div class="menu-item" onclick="mostrarSabores('Top Sundaes')">
+            <div class="logo-container">W</div>
+            <img src="img/peti gatou.JPG" alt="casquinha">
+            <h3>Top Sundaes</h3>
+            <p>Toque para ver as opções</p>
+        </div>
+
+    </section>
+    <button id="btnTopo" class="botao-topo">▲</button>
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Waves - Todos os direitos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+    <div id="caixaSabores" class="modal">
+        <div class="modal-content">
+        <button class="fechar" onclick="fecharSabores()">&times;</button>
+        <h2 id="tituloLanche"></h2>
+        <ul id="listaSabores"></ul>
+        </div>
+    </div>
+       
+</body>
+</html>
