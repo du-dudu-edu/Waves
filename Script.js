@@ -85,7 +85,11 @@ document.addEventListener("DOMContentLoaded", function () {
            "Expresso":["Expresso 35ml:. . . . . . . . . . . . . . .R$:5,99","Expresso longo:. . . . . . . . . . . . . .R$:5,99","Expresso Duplo 100ml:. . . . . . R$:8,99","Expresso Carioca 50ml. . . . . . R$4,99","Machiatto 60ml. . . . . . . . . . . . . .R$:7,99"],
            "Cappuccino":["Cappuccino Tradicional:. . . R$:14,99","Cappuccino Italiano:. . . . . . .R$:12,99","Cappuccino de Nutella:. . . . .R$:17,99"," Cappuccino Nutella c/Brigadeiro: R$:18,99","Chocotela:. . . . . . . . . . . . . . . . . .R$:16,00"],
            "Café Gelado":["Iced Caramel:. . . . . . . . . . . . . . .R$:14,99","Mocaccino Gelado:. . . . . . . . .R$:14,99","Affogato:. . . . . . . . . . . . . . . . . . . R$:15,00","Iced Latte:. . . . . . . . . . . . . . . . . .R$:12,99"],
-           "Batata":["Batata P:. . . . . . . . . . . . . . . . . . . . .R$:8,00","Batata G:. . . . . . . . . . . . . . . . . . . R$:12,00","Batata Waves:. . . . . . . . . . . . . R$:38,00","Batata Maluca:. . . . . . . . . . . . R$:33,00"]
+           "Batata":["Batata P:. . . . . . . . . . . . . . . . . . . . .R$:8,00","Batata G:. . . . . . . . . . . . . . . . . . . R$:12,00","Batata Waves:. . . . . . . . . . . . . R$:38,00","Batata Maluca:. . . . . . . . . . . . R$:33,00"],
+           "Waves Burguer":["Pão,carne,alface e maionese"," Carne ou frango:. . . . . . . . . . . . .13,99","Picanha:. . . . . . . . . . . . . .16,99"],
+           
+              
+        
         };
 
         // Se o lanche for válido, mostrar a modal com os sabores correspondentes
