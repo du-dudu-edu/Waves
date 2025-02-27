@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const sabores = {
-                      "Waves Max": ["Ovomaltine", "Sonho de Valsa", "Ouro Branco","Mini Oreo","Kit Kat","Prestigio","M&M","Bis"], 
+           "Waves Max": ["Ovomaltine", "Sonho de Valsa", "Ouro Branco","Mini Oreo","Kit Kat","Prestigio","M&M","Bis"], 
            "Milk Shake": ["Morango", "Morango c/Nutella", "Ninho"," Ninho c/Nutella","Maracuja","Maracuja c/Nutella","Ovomaltine","Oreo","Nutella","Paçoca","Flocos","Açaí c/Nutella"],
            "Casquinhas":["Casquinha. . . . . . . . . . . . . . . .R$:7,50","Casquinha Recheada c/Nutella R$:7,50","Casquinha Trufada . . . . . . R$:6,50","Cascão . . . . . . . . . . . . . . . . . . . R$:7,50","Cascão Trufado . . . . . . . . . R$:10,50"],
            "Sundaes":["Chocolate. . . . . . . . . . . . . . . . . . . . R$:9,00","Morango. . . . . . . . . . . . . . . . . . . . .R$:9,00","Nutella. . . . . . . . . . . . . . . . . . . . . .R$:10,50","Oreo. . . . . . . . . . . . . . . . . . . . . . . . R$:10,50", "Caramelo. . . . . . . . . . . . . . . . . . . R$:10,50", "Calda Quente. . . . . . . . . . . . . . . R$;11,50"],
@@ -105,6 +105,8 @@ document.addEventListener("DOMContentLoaded", function () {
            "Combo 4":["Big Waves(Carne ou frango),refri lata, batata P","Normal:. . . . . . . . . . . . . . . . . . . .R$:35,99","Picaha: . . . . . . . . . . . . . . . . . . . .R$:38,99"],
            "Combo 5":["2 X-Tudo(Carne ou frango),refri lata, batata P","Normal:. . . . . . . . . . . . . . . . . . . .R$:55,99","Picaha: . . . . . . . . . . . . . . . . . . . .R$:58,99"],
            "Combo 6":["2 X-Tudo(Carne ou frango),2 Milk Shake 300ml","Normal:. . . . . . . . . . . . . . . . . . . .R$:49,99","Picaha: . . . . . . . . . . . . . . . . . . . .R$:52,99"]
+        
+        };
         
         };
         
