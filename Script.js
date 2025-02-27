@@ -107,10 +107,6 @@ document.addEventListener("DOMContentLoaded", function () {
            "Combo 6":["2 X-Tudo(Carne ou frango),2 Milk Shake 300ml","Normal:. . . . . . . . . . . . . . . . . . . .R$:49,99","Picaha: . . . . . . . . . . . . . . . . . . . .R$:52,99"]
         
         };
-        
-        };
-        
-        };
 
         // Se o lanche for válido, mostrar a modal com os sabores correspondentes
         if (sabores[lanche]) {
