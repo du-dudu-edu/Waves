@@ -70,25 +70,11 @@
     <section class id="salgados"><h2 class="titulo-box">Salgados</h2></section>
     <section class="container">
 
-        <div class="menu-item">
+        <div class="menu-item" onclick="mostrarSabores('Croassaint')">
             <div class="logo-container">W</div><!-- Letra da Logo -->
-            <img src="img/croassaint 1.JPG" alt="Croiassant de Frango">
-            <h3>Croiassant de Frango</h3>
-            <p>R$:9,00</p>
-        </div>
-
-        <div class="menu-item">
-            <div class="logo-container">W</div><!-- Letra da Logo -->
-            <img src="img/croassaint 2.JPG" alt="Croiassant de Peito de Peru">
-            <h3>Croiassant de Peito de Peru</h3>
-            <p>R$:9,00</p>
-        </div>
-
-        <div class="menu-item">
-            <div class="logo-container">W</div><!-- Letra da Logo -->
-            <img src="img/croassaint 3.JPG" alt="Croiassant Misto">
-            <h3>Croiassant Misto</h3>
-            <p>R$:9,00</p>
+            <img src="img/croassaint 1.JPG" alt="Hambúrguer">
+            <h3>Croassaints</h3>
+            <p>Toque para ver mais</p>
         </div>
 
         <div class="menu-item">
@@ -116,5 +102,12 @@
     </footer>
 
     <script src="/Waves/Script.js"></script>
+    <div id="caixaSabores" class="modal">
+        <div class="modal-content">
+        <button class="fechar" onclick="fecharSabores()">&times;</button>
+        <h2 id="tituloLanche"></h2>
+        <ul id="listaSabores"></ul>
+        </div>
+    </div>
 </body>
 </html>
