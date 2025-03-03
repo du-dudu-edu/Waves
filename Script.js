@@ -104,7 +104,8 @@ document.addEventListener("DOMContentLoaded", function () {
            "Combo 3":["X-Tudo(Carne ou frango),refri lata, batata P","Normal:. . . . . . . . . . . . . . . . . . . .R$:29,99","Picaha:. . . . . . . . . . . . . . . . . . . . .R$:32,99"],
            "Combo 4":["Big Waves(Carne ou frango),refri lata, batata P","Normal:. . . . . . . . . . . . . . . . . . . .R$:35,99","Picaha: . . . . . . . . . . . . . . . . . . . .R$:38,99"],
            "Combo 5":["2 X-Tudo(Carne ou frango),refri lata, batata P","Normal:. . . . . . . . . . . . . . . . . . . .R$:55,99","Picaha: . . . . . . . . . . . . . . . . . . . .R$:58,99"],
-           "Combo 6":["2 X-Tudo(Carne ou frango),2 Milk Shake 300ml","Normal:. . . . . . . . . . . . . . . . . . . .R$:49,99","Picaha: . . . . . . . . . . . . . . . . . . . .R$:52,99"]
+           "Combo 6":["2 X-Tudo(Carne ou frango),2 Milk Shake 300ml","Normal:. . . . . . . . . . . . . . . . . . . .R$:49,99","Picaha: . . . . . . . . . . . . . . . . . . . .R$:52,99"],
+           "Croassaint":["Queijo:. . . . . . . . . . . . . . . . . . . . . . .R$:9,00","Misto:. . . . . . . . . . . . . . . . . . . . . . . R$:9,00","Peito de Peru:. . . . . . . . . . . . . . . R$:9,00","Frango:. . . . . . . . . . . . . . . . . . . . . .R$:9,00"]     
         
         };
 
