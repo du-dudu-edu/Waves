@@ -44,6 +44,18 @@ nav ul li a {
     font-weight: bold; 
     text-align: center; 
 }
+
+.titulo-box-top{
+    absolute:top;
+    display: inline-block; 
+    background:#402C21; 
+    padding: 10px 20px; 
+    border-radius: 10px; 
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); 
+    font-size: 24px; 
+    font-weight: bold; 
+    text-align: center; 
+}
 .option-box {
     absolute:top;
     display: inline-block; 
