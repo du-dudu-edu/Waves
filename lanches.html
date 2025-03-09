@@ -58,18 +58,22 @@
     </section>
     <section id="petiscos"><h2 class="titulo-box">Petiscos</h2></section> 
     <section class="container">
-        <div class="menu-item" onclick="mostrarSabores('Batata')">
+        <div class="menu-item">
             <div class="logo-container">W</div> <!-- Letra da Logo -->
             <img src="img/batata maluca.JPG" alt="Batatas">
+            <button onclick="abrirModalCardapioBat()" class="btn-abrir">
             <h3>Batatas</h3>
             <p>Toque para ver mais</p>
+            </button>button
         </div>   
 
-        <div class="menu-item" onclick="mostrarSabores('Petisco de Calabresa')">
+        <div class="menu-item">
             <div class="logo-container">W</div> <!-- Letra da Logo -->
             <img src="img/calabresa.JPG" alt="Petisco de Calabresa">
-            <h3>Petisco de Calabresa</h3>
+            <button onclick="abrirModalCardapioPetis()" class="btn-abrir">
+            <h3>Petiscos</h3>
             <p>Toque para ver mais</p>
+            </button>
         </div> 
 
         <div class="menu-item" onclick="mostrarSabores('Petisco de Pernil')">
@@ -247,6 +251,68 @@
                 <p>2 X-Tudo(Carne ou frango),2 Milk Shake 300ml</p>
                 <p>Normal:. . . . . . . . . . . . . . . . . . . .R$:49,99</p>
                 <p>Picanha:. . . . . . . . . . . . . . . . . . . . R$:19,50</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modalCardapioPetis" class="modal">
+    <div class="modal-content-H">
+        <button class="fechar-H" onclick="fecharModalCardapioPetis()">&times;</button>  
+        <h2 class="titulo-box">Cardápio de Petiscos</h2>
+
+        <!-- Lista de lanches -->
+        <div class="cardapio">
+            <div class="item">
+                <h3>Petisco de Calabresa</h3>
+                <p>Bandeja de Calabresa + Farofa</p>
+                <p>Calabresa:. . . . . . . . . . . . . . . . . .R$:29,00</p>
+                <p>Calabresa c/Fritas:. . . . . . . . .R$:39,00</p>
+            </div>
+            
+            <div class="item">
+                <h3>Petisco de Pernil</h3>
+                <p>Bandeja de Pernil + Farofa</p>
+                <p>Pernil:. . . . . . . . . . . . . . . . . . . . . . R$:39,00</p>
+                <p>Pernil c/Fritas:. . . . . . . . . . . . . R$:49,00</p>
+            </div>
+
+            <div class="item">
+                <h3>Petisco de Alcatra</h3>
+                <p>Bandeja de Alcatra + Farofa</p>
+                <p>Alcatra:. . . . . . . . . . . . . . . . . . . . R$:49,00</p>
+                <p>Alcatra c/Fritas:. . . . . . . . . . . . R$:59,00</p>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<div id="modalCardapioBat" class="modal">
+    <div class="modal-content-H">
+        <button class="fechar-H" onclick="fecharModalCardapioBat()">&times;</button>  
+        <h2 class="titulo-box">Cardápio de Batatas</h2>
+        <div class="cardapio">
+            <div class="item">
+                <h3>Batata P</h3>
+                <p>Porção Pequena de Batatas</p>
+                <p>R$:. . . . . . . . . . . . . . . . . . . . .R$:8,00</p>
+            </div>
+            
+            <div class="item">
+                <h3>Batata G</h3>
+                <p>Porção Grande de Batatas</p>
+                <p>R$:. . . . . . . . . . . . . . . . . . . R$:12,00</p>
+            </div>
+
+            <div class="item">
+                <h3>Batata Waves</h3>
+                <p>Batata Frita Coberta c/Queijo Cheddar e Bacon</p>
+                <p>R$:. . . . . . . . . . . . . R$:38,00</p>
+            </div>
+
+            <div class="item">
+                <h3>Batata Maluca</h3>
+                <p>Batata Frita COberta c/Queijo Provolone, calabresa e Cebola</p>
+                <p>R$:. . . . . . . . . . . . R$:33,00</p>
             </div>
         </div>
     </div>
