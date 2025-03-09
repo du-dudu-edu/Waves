@@ -65,6 +65,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (modalCardapioCombo) {
         modalCardapioCombo.style.display = "none";
     }
+    if (modalCardapioPetis) {
+        modalCardapioPetis.style.display = "none";
+    }
+    if (modalCardapioBat) {
+        modalCardapioBat.style.display = "none";
+    }
 
 });
 
@@ -150,11 +156,24 @@ function fecharModalCardapio() {
     document.getElementById("modalCardapio").style.display = "none";
 }
 
-
 function abrirModalCardapioCombo() {
     document.getElementById("modalCardapioCombo").style.display = "flex";
 }
 
 function fecharModalCardapioCombo() {
     document.getElementById("modalCardapioCombo").style.display = "none";
+}
+function abrirModalCardapioPetis() {
+    document.getElementById("modalCardapioPetis").style.display = "flex";
+}
+
+function fecharModalCardapioPetis() {
+    document.getElementById("modalCardapioPetis").style.display = "none";
+}
+function abrirModalCardapioBat() {
+    document.getElementById("modalCardapioBat").style.display = "flex";
+}
+
+function fecharModalCardapioBat() {
+    document.getElementById("modalCardapioBat").style.display = "none";
 }
