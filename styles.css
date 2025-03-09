@@ -26,7 +26,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #E8C07A;
+    color: #E9D073;
     font-weight: bold;
 }
 /* Container Principal */
@@ -35,7 +35,7 @@ nav ul li a {
     absolute:top;
     display: inline-block; 
     background:#402C21; 
-    color:#E8C07A; 
+    color:#E9D073; 
     padding: 10px 20px; 
     border-radius: 10px; 
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); 
@@ -58,14 +58,13 @@ nav ul li a {
 .option-box {
     absolute:top;
     display: inline-block; 
-    background: #E8C07A; 
+    background: #E9D073; 
     color:#402C21; 
     padding: 1px 2px; 
     border-radius: 10px; 
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);  
     font-size: 20px; 
     font-weight: bold; 
-
     text-align: center; 
 }
 
@@ -107,7 +106,7 @@ nav ul li a {
     width: 50px;
     height: 50px;
     background: #402C21;
-    color: #E8C07A;
+    color: #E9D073;
     font-family:'minhafonte';
     font-size: 29px;
     font-weight: bold;
@@ -157,7 +156,7 @@ nav ul li a {
    list-style:none;
    text-decoration:none;
    width:100%;
-   color:#E8C07A;
+   color:#E9D073;
 }
 
 .destaque{
@@ -203,7 +202,7 @@ footer {
     bottom: 20px; /* Distância do rodapé */
     right: 20px; /* Distância do canto direito */
     background-color: #402C21; /* Cor de fundo */
-    color: #E8C07A; /* Cor do ícone */
+    color: #E9D073; /* Cor do ícone */
     border: none;
     padding: 10px 15px;
     font-size: 20px;
@@ -275,7 +274,6 @@ footer {
     font-weight: bold;
     cursor: pointer;
     background: #402C21;
-    outline: none;
 }
 .btn-abrir {
     background:white;
