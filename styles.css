@@ -275,6 +275,7 @@ footer {
     font-weight: bold;
     cursor: pointer;
     background: #402C21;
+    outline: none;
 }
 .btn-abrir {
     background:white;
