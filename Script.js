@@ -59,6 +59,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (modal) {
         modal.style.display = "none";
     }
+    if (modalCardapio) {
+        modalCardapio.style.display = "none";
+    }
+    if (modalCardapioCombo) {
+        modalCardapioCombo.style.display = "none";
+    }
+
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -79,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
            "Sundaes":["Chocolate. . . . . . . . . . . . . . . . . . . . R$:9,00","Morango. . . . . . . . . . . . . . . . . . . . .R$:9,00","Nutella. . . . . . . . . . . . . . . . . . . . . .R$:10,50","Oreo. . . . . . . . . . . . . . . . . . . . . . . . R$:10,50", "Caramelo. . . . . . . . . . . . . . . . . . . R$:10,50", "Calda Quente. . . . . . . . . . . . . . . R$;11,50"],
            "Top Sundaes":["Chocolate. . . . . . . . . . . . . . . . . . .R$:13,50","Morango. . . . . . . . . . . . . . . . . . . .R$13,50","Caramelo. . . . . . . . . . . . . . . . . . .R$:15,50","Nutella. . . . . . . . . . . . . . . . . . . . . R$:15,50"],
            "Açaí":["180ml. . . . . . . . . . . . . . . . . . . . . . . .R$:8,99","300ml. . . . . . . . . . . . . . . . . . . . . . .R$:11,99","500ml. . . . . . . . . . . . . . . . . . . . . .  R$:15,99","700ml . . . . . . . . . . . . . . . . . . . . . .R$:17,99"],
-          "Petisco de Calabresa":["Calabresa:. . . . . . . . . . . . . . . . . .R$:29,00","Calabresa c/Fritas:. . . . . . . . .R$:39,00"],
+           "Petisco de Calabresa":["Calabresa:. . . . . . . . . . . . . . . . . .R$:29,00","Calabresa c/Fritas:. . . . . . . . .R$:39,00"],
            "Petisco de Pernil":["Pernil:. . . . . . . . . . . . . . . . . . . . . . R$:39,00","Pernil c/Fritas:. . . . . . . . . . . . . R$:49,00"],
            "Petisco de Alcatra":["Alcatra:.  . . . . . . . . . .  . . . . . . . . . R$:49,00","Alcatra c/Fritas:. . . . . . . . . . . . R$:59,00"],
            "Expresso":["Expresso 35ml:. . . . . . . . . . . . . . .R$:5,99","Expresso longo:. . . . . . . . . . . . . .R$:5,99","Expresso Duplo 100ml:. . . . . . R$:8,99","Expresso Carioca 50ml. . . . . . R$4,99","Machiatto 60ml. . . . . . . . . . . . . .R$:7,99"],
@@ -106,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
            "Combo 5":["2 X-Tudo(Carne ou frango),refri lata, batata P","Normal:. . . . . . . . . . . . . . . . . . . .R$:55,99","Picaha: . . . . . . . . . . . . . . . . . . . .R$:58,99"],
            "Combo 6":["2 X-Tudo(Carne ou frango),2 Milk Shake 300ml","Normal:. . . . . . . . . . . . . . . . . . . .R$:49,99","Picaha: . . . . . . . . . . . . . . . . . . . .R$:52,99"],
            "Croassaint":["Queijo:. . . . . . . . . . . . . . . . . . . . . . .R$:9,00","Misto:. . . . . . . . . . . . . . . . . . . . . . . R$:9,00","Peito de Peru:. . . . . . . . . . . . . . . R$:9,00","Frango:. . . . . . . . . . . . . . . . . . . . . .R$:9,00"]     
+
         
         };
 
@@ -132,3 +140,22 @@ document.addEventListener("DOMContentLoaded", function () {
     window.mostrarSabores = mostrarSabores;
     window.fecharSabores = fecharSabores;
 });
+
+
+
+function abrirModalCardapio() {
+    document.getElementById("modalCardapio").style.display = "flex";
+}
+
+function fecharModalCardapio() {
+    document.getElementById("modalCardapio").style.display = "none";
+}
+
+
+function abrirModalCardapioCombo() {
+    document.getElementById("modalCardapioCombo").style.display = "flex";
+}
+
+function fecharModalCardapioCombo() {
+    document.getElementById("modalCardapioCombo").style.display = "none";
+}
