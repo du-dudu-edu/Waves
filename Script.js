@@ -71,6 +71,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (modalCardapioBat) {
         modalCardapioBat.style.display = "none";
     }
+    if (modalCardapioCappu) {
+        modalCardapioCappu.style.display = "none";
+    }
 
 });
 
@@ -176,4 +179,11 @@ function abrirModalCardapioBat() {
 
 function fecharModalCardapioBat() {
     document.getElementById("modalCardapioBat").style.display = "none";
+}
+function abrirModalCardapioCappu() {
+    document.getElementById("modalCardapioCappu").style.display = "flex";
+}
+
+function fecharModalCardapioCappu() {
+    document.getElementById("modalCardapioCappu").style.display = "none";
 }
