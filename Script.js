@@ -59,24 +59,31 @@ document.addEventListener("DOMContentLoaded", function () {
     if (modal) {
         modal.style.display = "none";
     }
+        
     if (modalCardapio) {
         modalCardapio.style.display = "none";
     }
+        
     if (modalCardapioCombo) {
         modalCardapioCombo.style.display = "none";
     }
+        
     if (modalCardapioPetis) {
         modalCardapioPetis.style.display = "none";
     }
+        
     if (modalCardapioBat) {
         modalCardapioBat.style.display = "none";
     }
+        
     if (modalCardapioCappu) {
         modalCardapioCappu.style.display = "none";
     }
+        
     if (modalCardapioExp) {
         modalCardapioExp.style.display = "none";
-    }   
+    } 
+        
     if (modalCardapioGel) {
         modalCardapioGel.style.display = "none";
     }
