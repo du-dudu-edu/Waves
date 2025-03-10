@@ -180,6 +180,7 @@ function abrirModalCardapioBat() {
 function fecharModalCardapioBat() {
     document.getElementById("modalCardapioBat").style.display = "none";
 }
+
 function abrirModalCardapioCappu() {
     document.getElementById("modalCardapioCappu").style.display = "flex";
 }
