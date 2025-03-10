@@ -40,11 +40,13 @@
         <div class="menu-item" onclick="mostrarSabores('Expresso')">
             <div class="logo-container">W</div>
             <img src="img/expresso.JPG" alt="Expressos">
+            <button onclick="abrirModalCardapioExp()" class="btn-abrir">  
             <h3>Expressos</h3>
             <p>Toque para ver as opções</p>
+	    </button>
         </div>
 
-        <div class="menu-item" onclick="mostrarSabores('Cappuccino')">
+        <div class="menu-item">
             <div class="logo-container">W</div>
             <img src="img/cappuccino.JPG" alt="Cappuccinos">
 	    <button onclick="abrirModalCardapioCappu()" class="btn-abrir">
@@ -96,32 +98,112 @@
             
             <div class="item">
                 <h3>Cappuccino Tradicional</h3>
-                <p>Bandeja de Pernil + Farofa</p>
+                <p>Bebida Italiana, Feita com Café Expresso e Leite.</p>
                 <p>R$:. . . . . . . . . . . . . . . . .:14,99</p>
             </div>
-
+		
+            <div class="item">
+                <h3>Chocolate Quente Cremoso</h3>
+                <p>Leite Vaporizado(120ml) + Chocolate(30g)</p>
+                <p>R$:. . . . . . . . . . . . . . . . .:14,99</p>
+            </div>
+		
             <div class="item">
                 <h3>Chocotela</h3>
-                <p>Bandeja de Alcatra + Farofa</p>
+                <p>Chocolate Quente Europeu com Borda de Nutella (250ml)</p>
                 <p>R$:. . . . . . . . . . . . . . . . . .16,00</p>
             </div>
 		
 	    <div class="item">
                 <h3>Mocaccino Gianduia</h3>
-                <p>Bandeja de Alcatra + Farofa</p>
+                <p>Nutella, Café Expresso,Leite Vaporizado e Espuma de Leite (250ml)</p>
                 <p>R$:. . . . . . . . . . . . . . . . . .16,00</p>
             </div>
 
 	    <div class="item">
                 <h3> Cappuccino de Nutella</h3>
-                <p>Bandeja de Alcatra + Farofa</p>
+                <p>Nutella, Cappuccino e Borda de Nutella(250ml)</p>
                 <p>R$:. . . . . . . . . . . . . . . . . . . . .17,99</p>
             </div>
 
 	    <div class="item">
                 <h3> Cappuccino de Nutella c/Brigadeiro</h3>
-                <p>Bandeja de Alcatra + Farofa</p>
+                <p>Nutella,Brigadeiro e Cappuccino</p>
                 <p>R$:. . . . . . . . . . . . . . . . . . . . .18,99</p>
+            </div>
+        </div>
+    </div>
+</div>
+	    
+<div id="modalCardapioExp" class="modal">
+    <div class="modal-content-H">
+        <button class="fechar-H" onclick="fecharModalCardapioExp()">&times;</button>  
+        <h2 class="titulo-box">Cardápio de Expressos</h2>
+
+        <!-- Lista de lanches -->
+        <div class="cardapio">
+            <div class="item">
+                <h3>Expresso Carioca</h3>
+                <p>Expresso curto + Água Quente</p>
+                <p>R$:. . . . . . . . . . . . . . . . . . . . .4,99</p>
+            </div>
+            
+            <div class="item">
+                <h3>Expresso</h3>
+                <p>Curto(35ml) ou Longo(50ml)</p>
+                <p>R$:. . . . . . . . . . . . . . . . .:5,99</p>
+            </div>
+
+            <div class="item">
+                <h3>Drip Coffe</h3>
+                <p>Café Coado (50ml)</p>
+                <p>R$:. . . . . . . . . . . . . . . . . .5,99</p>
+            </div>
+
+	    <div class="item">
+                <h3> Machiatto</h3>
+                <p>Expresso curto + Espuma de Leite Vaporizado(60ml)</p>
+                <p>R$:. . . . . . . . . . . . . . . . . . . . .7,99</p>
+            </div>
+		
+            <div class="item">
+                <h3>Expresso Duplo</h3>
+                <p>Duas Doses de Café em uma Xícara Grande(50ml)</p>
+                <p>R$:. . . . . . . . . . . . . . . . . .8,99</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalCardapioGel" class="modal">
+    <div class="modal-content-H">
+        <button class="fechar-H" onclick="fecharModalCardapioGel()">&times;</button>  
+        <h2 class="titulo-box">Cardápio de Cafés Gelados</h2>
+
+        <!-- Lista de lanches -->
+        <div class="cardapio">
+            <div class="item">
+                <h3>Iced Latte</h3>
+                <p>Café Expresso Gelado e Leite Cremoso (230ml)</p>
+                <p>R$:. . . . . . . . . . . . . . . . . . . . .:12,99</p>
+            </div>
+
+            <div class="item">
+                <h3>Affogato</h3>
+                <p>Sorvete de Creme e Café Expresso</p>
+                <p>R$:. . . . . . . . . . . . . . . . . .15,00</p>
+            </div>
+		
+            <div class="item">
+                <h3>Mocaccino Gelado</h3>
+                <p>Nutella, Gelo, Café Expresso e Leite Cremoso(230ml)</p>
+                <p>R$:. . . . . . . . . . . . . . . . .:15,99</p>
+            </div>
+
+	    <div class="item">
+                <h3>Iced Caramel</h3>
+                <p>Café Expresso, Leite Cremoso e Gelo(250ml)</p>
+                <p>R$:. . . . . . . . . . . . . . . . . . . . .18,00</p>
             </div>
         </div>
     </div>
