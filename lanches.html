@@ -37,34 +37,28 @@
     <section id="burgers"><h2 class="titulo-box">Lanches</h2></section> 
     <!-- Seção do Cardápio -->
     <section class="container">
-        <div class="menu-item"> 
+        <div class="menu-item" onclick="abrirModal('modalCardapio')"> 
             <div class="logo-container">W</div> <!-- Letra da Logo -->
             <img src="img/painel lanches.JPG" alt="Waves Burguer">
-            <button onclick="abrirModalCardapio()" class="btn-abrir">
             <h3>Lanches</h3>
             <p>Ver Cardápio</p>
-            </button>
         </div>
 
-        <div class="menu-item">
+        <div class="menu-item"  onclick="abrirModal('modalCardapioCombo')">
             <div class="logo-container">W</div> <!-- Letra da Logo -->
-            <img src="img/Combo 1.JPG" alt="Combo 1">
-            <button onclick="abrirModalCardapioCombo()" class="btn-abrir">  
+            <img src="img/Combo 1.JPG" alt="Combo 1"> 
             <h3>Combos</h3>
-            <p>Toque para ver mais</p> 
-            </button>  
+            <p>Toque para ver mais</p>   
         </div>
         
     </section>
     <section id="petiscos"><h2 class="titulo-box">Petiscos</h2></section> 
     <section class="container">
-        <div class="menu-item">
+        <div class="menu-item" onclick="abrirModal('modalCardapioBat')">
             <div class="logo-container">W</div> <!-- Letra da Logo -->
             <img src="img/batata maluca.JPG" alt="Batatas">
-            <button onclick="abrirModalCardapioBat()" class="btn-abrir">
             <h3>Batatas</h3>
             <p>Toque para ver mais</p>
-            </button>button
         </div>   
 
         <div class="menu-item">
@@ -93,7 +87,7 @@
     <div id="modalCardapio" class="modal">
     
     <div class="modal-content-H">
-        <button class="fechar-H" onclick="fecharModalCardapio()">&times;</button>  
+        <button class="fechar-H" onclick="fecharModal('modalCardapio')">&times;</button>  
         <h2 class="titulo-box">Cardápio de Lanches</h2>
 
         <!-- Lista de lanches -->
@@ -192,7 +186,7 @@
 <div id="modalCardapioCombo" class="modal">
     
     <div class="modal-content-H">
-        <button class="fechar-H" onclick="fecharModalCardapioCombo()">&times;</button>  
+        <button class="fechar-H" onclick="fecharModal('modalCardapioCombo')">&times;</button>  
         <h2 class="titulo-box">Cardápio de Combos</h2>
 
         <!-- Lista de lanches -->
@@ -243,7 +237,7 @@
 </div>
 <div id="modalCardapioPetis" class="modal">
     <div class="modal-content-H">
-        <button class="fechar-H" onclick="fecharModalCardapioPetis()">&times;</button>  
+        <button class="fechar-H" onclick="fecharModal('modalCardapioPetis')">&times;</button>  
         <h2 class="titulo-box">Cardápio de Petiscos</h2>
 
         <!-- Lista de lanches -->
@@ -274,7 +268,7 @@
         
 <div id="modalCardapioBat" class="modal">
     <div class="modal-content-H">
-        <button class="fechar-H" onclick="fecharModalCardapioBat()">&times;</button>  
+        <button class="fechar-H" onclick="fecharModal('modalCardapioBat')">&times;</button>  
         <h2 class="titulo-box">Cardápio de Batatas</h2>
         <div class="cardapio">
             <div class="item">
