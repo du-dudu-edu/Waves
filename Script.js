@@ -1,20 +1,5 @@
-document.querySelectorAll('.scroll-link').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 50, // Ajusta para não colar no topo
-                    behavior: 'smooth' // Rola suavemente
-                });
-            }
-        });
-    });
-
-
 document.addEventListener("DOMContentLoaded", function () {
+    /** 🔹 Scroll suave para links internos */
     document.querySelectorAll('.scroll-link').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -23,198 +8,85 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 50, // Ajusta para não colar no topo
-                    behavior: 'smooth' // Rola suavemente
+                    top: targetElement.offsetTop - 50, // Ajuste para não colar no topo
+                    behavior: 'smooth'
                 });
             }
         });
     });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
+    /** 🔹 Exibir botão "Voltar ao Topo" ao rolar a página */
     const botaoTopo = document.getElementById("btnTopo");
-
-    // Exibir o botão ao descer a página
-    window.addEventListener("scroll", function () {
-        if (window.scrollY > 300) { // Mostra o botão após rolar 300px
-            botaoTopo.style.display = "block";
-        } else {
-            botaoTopo.style.display = "none";
-        }
-    });
-
-    // Rolar suavemente para o topo ao clicar
-    botaoTopo.addEventListener("click", function () {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
+    if (botaoTopo) {
+        window.addEventListener("scroll", function () {
+            botaoTopo.style.display = window.scrollY > 300 ? "block" : "none";
         });
+
+        botaoTopo.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
+
+    /** 🔹 Garante que todas as modais começam ocultas */
+    const modais = [
+        "caixaSabores", "modalCardapio", "modalCardapioCombo",
+        "modalCardapioPetis", "modalCardapioBat", "modalCardapioCappu",
+        "modalCardapioExp", "modalCardapioGel"
+    ];
+
+    modais.forEach(id => {
+        const modal = document.getElementById(id);
+        if (modal) modal.style.display = "none";
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+/** 🔹 Funções genéricas para abrir e fechar qualquer modal */
+function abrirModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) modal.style.display = "flex";
+}
+
+function fecharModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) modal.style.display = "none";
+}
+
+/** 🔹 Exibir sabores ao clicar em um lanche */
+function mostrarSabores(lanche) {
+    const titulo = document.getElementById("tituloLanche");
+    const lista = document.getElementById("listaSabores");
     const modal = document.getElementById("caixaSabores");
 
-    // Garante que o modal está oculto ao carregar a página
-    if (modal) {
-        modal.style.display = "none";
-    }
-        
-    if (modalCardapio) {
-        modalCardapio.style.display = "none";
-    }
-        
-    if (modalCardapioCombo) {
-        modalCardapioCombo.style.display = "none";
-    }
-        
-    if (modalCardapioPetis) {
-        modalCardapioPetis.style.display = "none";
-    }
-        
-    if (modalCardapioBat) {
-        modalCardapioBat.style.display = "none";
-    }
-        
-    if (modalCardapioCappu) {
-        modalCardapioCappu.style.display = "none";
-    }
-        
-    if (modalCardapioExp) {
-        modalCardapioExp.style.display = "none";
-    } 
-        
-    if (modalCardapioGel) {
-        modalCardapioGel.style.display = "none";
+    if (!titulo || !lista || !modal) {
+        console.error("Elemento não encontrado no HTML!");
+        return;
     }
 
-});
+    const sabores = {
+        "Waves Max": ["Ovomaltine", "Sonho de Valsa", "Ouro Branco","Mini Oreo","Kit Kat","Prestigio","M&M","Bis"], 
+        "Milk Shake": ["Morango", "Morango c/Nutella", "Ninho"," Ninho c/Nutella","Maracuja","Maracuja c/Nutella","Ovomaltine","Oreo","Nutella","Paçoca","Flocos","Açaí c/Nutella"],
+        "Casquinhas":["Casquinha. . . . . . . . . . . . . . . .R$:7,50","Casquinha Recheada c/Nutella R$:7,50","Casquinha Trufada . . . . . . R$:6,50","Cascão . . . . . . . . . . . . . . . . . . . R$:7,50","Cascão Trufado . . . . . . . . . R$:10,50"],
+        "Sundaes":["Chocolate. . . . . . . . . . . . . . . . . . . . R$:9,00","Morango. . . . . . . . . . . . . . . . . . . . .R$:9,00","Nutella. . . . . . . . . . . . . . . . . . . . . .R$:10,50","Oreo. . . . . . . . . . . . . . . . . . . . . . . . R$:10,50", "Caramelo. . . . . . . . . . . . . . . . . . . R$:10,50", "Calda Quente. . . . . . . . . . . . . . . R$;11,50"," Top Chocolate. . . . . . . . . . . . . .R$:13,50","Top Morango. . . . . . . . . . . . . . .R$13,50","Top Caramelo. . . . . . . . . . . . . .R$:15,50"," Top Nutella. . . . . . . . . . . . . . . . R$:15,50"],
+        "Açaí":["180ml. . . . . . . . . . . . . . . . . . . . . . . .R$:8,99","300ml. . . . . . . . . . . . . . . . . . . . . . .R$:11,99","500ml. . . . . . . . . . . . . . . . . . . . . .  R$:15,99","700ml . . . . . . . . . . . . . . . . . . . . . .R$:17,99"],
+        "Croassaint":["Queijo:. . . . . . . . . . . . . . . . . . . . . . .R$:9,00","Misto:. . . . . . . . . . . . . . . . . . . . . . . R$:9,00","Peito de Peru:. . . . . . . . . . . . . . . R$:9,00","Frango:. . . . . . . . . . . . . . . . . . . . . .R$:9,00"]
+    };
 
-document.addEventListener("DOMContentLoaded", function () {
-    function mostrarSabores(lanche) {
-        const titulo = document.getElementById("tituloLanche");
-        const lista = document.getElementById("listaSabores");
-        const modal = document.getElementById("caixaSabores");
-
-        if (!titulo || !lista || !modal) {
-            console.error("Elemento não encontrado no HTML!");
-            return;
-        }
-
-        const sabores = {
-           "Waves Max": ["Ovomaltine", "Sonho de Valsa", "Ouro Branco","Mini Oreo","Kit Kat","Prestigio","M&M","Bis"], 
-           "Milk Shake": ["Morango", "Morango c/Nutella", "Ninho"," Ninho c/Nutella","Maracuja","Maracuja c/Nutella","Ovomaltine","Oreo","Nutella","Paçoca","Flocos","Açaí c/Nutella"],
-           "Casquinhas":["Casquinha. . . . . . . . . . . . . . . .R$:7,50","Casquinha Recheada c/Nutella R$:7,50","Casquinha Trufada . . . . . . R$:6,50","Cascão . . . . . . . . . . . . . . . . . . . R$:7,50","Cascão Trufado . . . . . . . . . R$:10,50"],
-           "Sundaes":["Chocolate. . . . . . . . . . . . . . . . . . . . R$:9,00","Morango. . . . . . . . . . . . . . . . . . . . .R$:9,00","Nutella. . . . . . . . . . . . . . . . . . . . . .R$:10,50","Oreo. . . . . . . . . . . . . . . . . . . . . . . . R$:10,50", "Caramelo. . . . . . . . . . . . . . . . . . . R$:10,50", "Calda Quente. . . . . . . . . . . . . . . R$;11,50"," Top Chocolate. . . . . . . . . . . . . .R$:13,50","Top Morango. . . . . . . . . . . . . . .R$13,50","Top Caramelo. . . . . . . . . . . . . .R$:15,50"," Top Nutella. . . . . . . . . . . . . . . . R$:15,50"],
-           "Açaí":["180ml. . . . . . . . . . . . . . . . . . . . . . . .R$:8,99","300ml. . . . . . . . . . . . . . . . . . . . . . .R$:11,99","500ml. . . . . . . . . . . . . . . . . . . . . .  R$:15,99","700ml . . . . . . . . . . . . . . . . . . . . . .R$:17,99"],
-           "Petisco de Calabresa":["Calabresa:. . . . . . . . . . . . . . . . . .R$:29,00","Calabresa c/Fritas:. . . . . . . . .R$:39,00"],
-           "Petisco de Pernil":["Pernil:. . . . . . . . . . . . . . . . . . . . . . R$:39,00","Pernil c/Fritas:. . . . . . . . . . . . . R$:49,00"],
-           "Petisco de Alcatra":["Alcatra:.  . . . . . . . . . .  . . . . . . . . . R$:49,00","Alcatra c/Fritas:. . . . . . . . . . . . R$:59,00"],
-           "Expresso":["Expresso 35ml:. . . . . . . . . . . . . . .R$:5,99","Expresso longo:. . . . . . . . . . . . . .R$:5,99","Expresso Duplo 100ml:. . . . . . R$:8,99","Expresso Carioca 50ml. . . . . . R$4,99","Machiatto 60ml. . . . . . . . . . . . . .R$:7,99"],
-           "Cappuccino":["Tradicional:. . . . . . . . . . . . . . . . .R$:14,99","Italiano:. . . . . . . . . . . . . . . . . . . . .R$:12,99","Nutella:. . . . . . . . . . . . . . . . . . . . . R$:17,99","Nutella c/Brigadeiro: . . . . . . R$:18,99","Chocotela:. . . . . . . . . . . . . . . . . .R$:16,00","Mocaccino Gianduia. . . . . . .R$:16,00"],
-           "Café Gelado":["Iced Caramel:. . . . . . . . . . . . . . .R$:14,99","Mocaccino Gelado:. . . . . . . . .R$:14,99","Affogato:. . . . . . . . . . . . . . . . . . . R$:15,00","Iced Latte:. . . . . . . . . . . . . . . . . .R$:12,99"],
-           "Batata":["Batata P:. . . . . . . . . . . . . . . . . . . . .R$:8,00","Batata G:. . . . . . . . . . . . . . . . . . . R$:12,00","Batata Waves:. . . . . . . . . . . . . R$:38,00","Batata Maluca:. . . . . . . . . . . . R$:33,00"],
-           "Waves Burguer":["Pão,carne,alface e maionese"," Carne ou frango:. . . . . . . . . . . .R$:13,99","Picanha:. . . . . . . . . . . . . . . . . . . . R$:16,99"],
-           "X-Burguer":["Pão, carne, queijo, alface e maionese","Carne ou frango:. . . . . . . . . . . .R$15,50","Picanha:. . . . . . . . . . . . . . . . . . . . R$:18,50"],
-           "X-Bacon":["Pão, carne, bacon, alface e maionese","Carne ou frango:. . . . . . . . . . . .R$17,50","Picanha:. . . . . . . . . . . . . . . . . . . . R$:20,50"],
-           "X-Calabresa":["Pão, carne, calabresa, alface e maionese","Carne ou frango:. . . . . . . . . . . .R$17,50","Picanha:. . . . . . . . . . . . . . . . . . . . R$:20,50"],
-           "X-Egg":["Pão, carne, ovo, alface e maionese","Carne ou frango:. . . . . . . . . . . .R$19,99","Picanha:. . . . . . . . . . . . . . . . . . . .R$:22,99"],
-           "Cheddar Prime":["Pão,carne picanha 120g,cheddar cremoso e cebola caramelizada","Picanha:. . . . . . . . . . . . . . . . . . . . R$:19,50"],
-           "X-tudo":["Pão, carne, queijo, ovo, bacon, calabresa, alface e maionese","Carne ou frango:. . . . . . . . . . . .R$26,50"],
-           "Duplo X-Burguer":["Pão,2 carnes,2 queijos, alface e maionese","Carne ou frango:. . . . . . . . . . . .R$25,50","Picanha:. . . . . . . . . . . . . . . . . . . . R$:28,50"],
-           "Waves Montanha":["2 Pães, 2 carnes, 2 queijos, ovo, bacon, calabresa, alface e maionese","Carne ou frango:. . . . . . . . . . . .R$27,99","Picanha:. . . . . . . . . . . . . . . . . . . . R$:30,99"],
-           "Big Waves":["Pão,3 carnes,3 queijos,ovo,alface e maionese","Carne ou frango:. . . . . . . . . . . .R$29,99","Picanha:. . . . . . . . . . . . . . . . . . . . R$:32,99"],
-           "Waves Premium Artesanal":["Pão brioche,carne de picanha 180g,queijo cheddar, bacon triturado, salada e molho especial","Normal:. . . . . . . . . . . . . . . . . . . . R$:34,99","Combo:. . . . . . . . . . . . . . . . . . . . . R$:46,99"],
-           "Delicia de Frango":["Pão árabe, filé de frango grelhado, queijo, tomate e alface","R$:. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .20,50"],
-           "Gula de Filé":["Pão árabe, filé bovino grelhado, queijo, cebola grelhada no shoyu,tomate e alface","R$:. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .27,50"],
-           "Combo 1":["Waves burguer(Carne ou frango),refri lata, batata","Normal:. . . . . . . . . . . . . . . . . . . .R$:19,99","Picaha:. . . . . . . . . . . . . . . . . . . . .R$:22,99"],
-           "Combo 2":["X-Calabresa ou X-Bacon(Carne ou frango),refri lata, batata P","Normal:. . . . . . . . . . . . . . . . . . . .R$:24,99","Picaha: . . . . . . . . . . . . . . . . . . . . .R$:27,99"],
-           "Combo 3":["X-Tudo(Carne ou frango),refri lata, batata P","Normal:. . . . . . . . . . . . . . . . . . . .R$:29,99","Picaha:. . . . . . . . . . . . . . . . . . . . .R$:32,99"],
-           "Combo 4":["Big Waves(Carne ou frango),refri lata, batata P","Normal:. . . . . . . . . . . . . . . . . . . .R$:35,99","Picaha: . . . . . . . . . . . . . . . . . . . .R$:38,99"],
-           "Combo 5":["2 X-Tudo(Carne ou frango),refri lata, batata P","Normal:. . . . . . . . . . . . . . . . . . . .R$:55,99","Picaha: . . . . . . . . . . . . . . . . . . . .R$:58,99"],
-           "Combo 6":["2 X-Tudo(Carne ou frango),2 Milk Shake 300ml","Normal:. . . . . . . . . . . . . . . . . . . .R$:49,99","Picaha: . . . . . . . . . . . . . . . . . . . .R$:52,99"],
-           "Croassaint":["Queijo:. . . . . . . . . . . . . . . . . . . . . . .R$:9,00","Misto:. . . . . . . . . . . . . . . . . . . . . . . R$:9,00","Peito de Peru:. . . . . . . . . . . . . . . R$:9,00","Frango:. . . . . . . . . . . . . . . . . . . . . .R$:9,00"]     
-
-        
-        };
-
-        // Se o lanche for válido, mostrar a modal com os sabores correspondentes
-        if (sabores[lanche]) {
-            titulo.innerText = `Escolha o sabor do ${lanche}`;
-            lista.innerHTML = ""; // Limpa a lista antes de adicionar novos itens
-
-            sabores[lanche].forEach(sabor => {
-                let li = document.createElement("li");
-                li.innerText = sabor;
-                lista.appendChild(li);
-            });
-
-            modal.style.display = "flex";
-        }
+    if (!sabores[lanche]) {
+        console.error("Lanche não encontrado no menu!");
+        return;
     }
 
-    function fecharSabores() {
-        document.getElementById("caixaSabores").style.display = "none";
-    }
+    titulo.innerText = `Escolha o sabor do ${lanche}`;
+    lista.innerHTML = ""; // Limpa a lista antes de adicionar novos itens
 
-    // Deixando as funções globais para serem chamadas no HTML
-    window.mostrarSabores = mostrarSabores;
-    window.fecharSabores = fecharSabores;
-});
+    sabores[lanche].forEach(sabor => {
+        let li = document.createElement("li");
+        li.innerText = sabor;
+        lista.appendChild(li);
+    });
 
-
-
-function abrirModalCardapio() {
-    document.getElementById("modalCardapio").style.display = "flex";
+    abrirModal("caixaSabores");
 }
-
-function fecharModalCardapio() {
-    document.getElementById("modalCardapio").style.display = "none";
-}
-
-function abrirModalCardapioCombo() {
-    document.getElementById("modalCardapioCombo").style.display = "flex";
-}
-
-function fecharModalCardapioCombo() {
-    document.getElementById("modalCardapioCombo").style.display = "none";
-}
-function abrirModalCardapioPetis() {
-    document.getElementById("modalCardapioPetis").style.display = "flex";
-}
-
-function fecharModalCardapioPetis() {
-    document.getElementById("modalCardapioPetis").style.display = "none";
-}
-function abrirModalCardapioBat() {
-    document.getElementById("modalCardapioBat").style.display = "flex";
-}
-
-function fecharModalCardapioBat() {
-    document.getElementById("modalCardapioBat").style.display = "none";
-}
-
-function abrirModalCardapioCappu() {
-    document.getElementById("modalCardapioCappu").style.display = "flex";
-}
-
-function fecharModalCardapioCappu() {
-    document.getElementById("modalCardapioCappu").style.display = "none";
-}
-
-function abrirModalCardapioExp() {
-    document.getElementById("modalCardapioExp").style.display = "flex";
-}
-
-function fecharModalCardapioExp() {
-    document.getElementById("modalCardapioExp").style.display = "none";
-}
-
-function abrirModalCardapioGel() {
-    document.getElementById("modalCardapioGel").style.display = "flex";
-}
-
-function fecharModalCardapioGel() {
-    document.getElementById("modalCardapioGel").style.display = "none";
-}
-
