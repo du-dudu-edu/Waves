@@ -47,7 +47,7 @@
         <div class="menu-item" onclick="mostrarSabores('Cappuccino')">
             <div class="logo-container">W</div>
             <img src="img/cappuccino.JPG" alt="Cappuccinos">
-	    <button onclick="abrirModalCardapio()" class="btn-abrir">
+	    <button onclick="abrirModalCardapioCappu()" class="btn-abrir">
             <h3>Cappuccinos</h3>
             <p>Toque para ver as opções</p>
 	    </button>
@@ -79,5 +79,52 @@
         </div>
     </div>
 <script src="/Waves/Script.js"></script>	
+	
+<div id="modalCardapioCappu" class="modal">
+    <div class="modal-content-H">
+        <button class="fechar-H" onclick="fecharModalCardapioCappu()">&times;</button>  
+        <h2 class="titulo-box">Cardápio de Cappuccinos</h2>
+
+        <!-- Lista de lanches -->
+        <div class="cardapio">
+            <div class="item">
+                <h3>Cappuccino Italiano</h3>
+                <p>Bandeja de Calabresa + Farofa</p>
+                <p>R$:. . . . . . . . . . . . . . . . . . . . .12,99</p>
+
+            </div>
+            
+            <div class="item">
+                <h3>Cappuccino Tradicional</h3>
+                <p>Bandeja de Pernil + Farofa</p>
+                <p>R$:. . . . . . . . . . . . . . . . .:14,99</p>
+            </div>
+
+            <div class="item">
+                <h3>Chocotela</h3>
+                <p>Bandeja de Alcatra + Farofa</p>
+                <p>R$:. . . . . . . . . . . . . . . . . .16,00</p>
+            </div>
+		
+	    <div class="item">
+                <h3>Mocaccino Gianduia</h3>
+                <p>Bandeja de Alcatra + Farofa</p>
+                <p>R$:. . . . . . . . . . . . . . . . . .16,00</p>
+            </div>
+
+	    <div class="item">
+                <h3> Cappuccino de Nutella</h3>
+                <p>Bandeja de Alcatra + Farofa</p>
+                <p>R$:. . . . . . . . . . . . . . . . . . . . .17,99</p>
+            </div>
+
+	    <div class="item">
+                <h3> Cappuccino de Nutella c/Brigadeiro</h3>
+                <p>Bandeja de Alcatra + Farofa</p>
+                <p>R$:. . . . . . . . . . . . . . . . . . . . .18,99</p>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
