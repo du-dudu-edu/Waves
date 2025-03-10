@@ -37,22 +37,18 @@
     <!-- Seção do Cardápio -->
     <section class="container">
 
-        <div class="menu-item">
+        <div class="menu-item" onclick="abrirModal('modalCardapioExp')">
             <div class="logo-container">W</div>
-            <img src="img/expresso.JPG" alt="Expressos">
-            <button onclick="abrirModalCardapioExp()" class="btn-abrir">  
+            <img src="img/expresso.JPG" alt="Expressos"> 
             <h3>Expressos</h3>
             <p>Toque para ver as opções</p>
-	    </button>
         </div>
 
-        <div class="menu-item">
+        <div class="menu-item" onclick="abrirModal('CardapioCappu')">
             <div class="logo-container">W</div>
             <img src="img/cappuccino.JPG" alt="Cappuccinos">
-	    <button onclick="abrirModalCardapioCappu()" class="btn-abrir">
             <h3>Cappuccinos</h3>
             <p>Toque para ver as opções</p>
-	    </button>
         </div>
 
 
@@ -60,10 +56,9 @@
     <section class id="gelado"><h2 class="titulo-box">Gelados</h2></section>
     <section class="container">
         
-        <div class="menu-item">
+        <div class="menu-item" onclick="abrirModal('modalCardapioGel')>
             <div class="logo-container">W</div>
             <img src="img/cafe gelado.JPG" alt="Cafés Gelados">
-	    <button onclick="abrirModalCardapioGel()" class="btn-abrir">
             <h3>Cafés Gelados</h3>
 	    <p>Toque para ver as opções</p>
 	    </button>
@@ -86,7 +81,7 @@
 	
 <div id="modalCardapioCappu" class="modal">
     <div class="modal-content-H">
-        <button class="fechar-H" onclick="fecharModalCardapioCappu()">&times;</button>  
+        <button class="fechar-H" onclick="fecharModal('modalCardapioCappu')">&times;</button>  
         <h2 class="titulo-box">Cardápio de Cappuccinos</h2>
 
         <!-- Lista de lanches -->
@@ -139,7 +134,7 @@
 	    
 <div id="modalCardapioExp" class="modal">
     <div class="modal-content-H">
-        <button class="fechar-H" onclick="fecharModalCardapioExp()">&times;</button>  
+        <button class="fechar-H" onclick="fecharModal('modalCardapioExp')">&times;</button>  
         <h2 class="titulo-box">Cardápio de Expressos</h2>
 
         <!-- Lista de lanches -->
@@ -179,7 +174,7 @@
 
 <div id="modalCardapioGel" class="modal">
     <div class="modal-content-H">
-        <button class="fechar-H" onclick="fecharModalCardapioGel()">&times;</button>  
+        <button class="fechar-H" onclick="fecharModal('modalCardapioGel')">&times;</button>  
         <h2 class="titulo-box">Cardápio de Cafés Gelados</h2>
 
         <!-- Lista de lanches -->
@@ -187,7 +182,7 @@
             <div class="item">
                 <h3>Iced Latte</h3>
                 <p>Café Expresso Gelado e Leite Cremoso (230ml)</p>
-                <p>R$:. . . . . . . . . . . . . . . . . . . . .:12,99</p>
+                <p>R$:. . . . . . . . . . . . . . . . . . . . .12,99</p>
             </div>
 
             <div class="item">
@@ -199,7 +194,7 @@
             <div class="item">
                 <h3>Mocaccino Gelado</h3>
                 <p>Nutella, Gelo, Café Expresso e Leite Cremoso(230ml)</p>
-                <p>R$:. . . . . . . . . . . . . . . . .:15,99</p>
+                <p>R$:. . . . . . . . . . . . . . . . .15,99</p>
             </div>
 
 	    <div class="item">
