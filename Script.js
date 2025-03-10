@@ -56,14 +56,35 @@ document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("caixaSabores");
 
     // Garante que o modal está oculto ao carregar a página
-    if (modal,modalCardapio,modalCardapioCombo,modalCardapioPetis,modalCardapioBat,modalCardapioCappu,modalCardapioExp,modalCardapioGel) {
+    if (modal) {
         modal.style.display = "none";
+    }
+        
+    if (modalCardapio) {
         modalCardapio.style.display = "none";
+    }
+        
+    if (modalCardapioCombo) {
         modalCardapioCombo.style.display = "none";
+    }
+        
+    if (modalCardapioPetis) {
         modalCardapioPetis.style.display = "none";
+    }
+        
+    if (modalCardapioBat) {
         modalCardapioBat.style.display = "none";
+    }
+        
+    if (modalCardapioCappu) {
         modalCardapioCappu.style.display = "none";
+    }
+        
+    if (modalCardapioExp) {
         modalCardapioExp.style.display = "none";
+    } 
+        
+    if (modalCardapioGel) {
         modalCardapioGel.style.display = "none";
     }
 
