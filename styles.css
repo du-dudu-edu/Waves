@@ -134,11 +134,7 @@ nav ul li a {
     .contato-item span {
        display:none;
     }
-    .fechar-H{
-        position:relative;
-        top:10px;
-        left:10px;
-    }
+    
 }
 
 @media (max-width: 400px) {
@@ -148,11 +144,7 @@ nav ul li a {
         .contato-item span {
            display:none;
     }
-    .fechar-H{
-        position:relative;
-        top:10px;
-        left:10px;
-    }
+    
 }
 
 .lista{
