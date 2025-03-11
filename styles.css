@@ -266,7 +266,7 @@ footer {
     outline: none;
 }
 .fechar-H {
-    position: fixed;
+    position: absolute;
     top: 40px; /* Distância do topo */
     right: 20px; /* Distância da lateral direita */
     color: red;
