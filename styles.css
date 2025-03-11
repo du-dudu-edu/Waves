@@ -135,7 +135,7 @@ nav ul li a {
        display:none;
     }
     .fechar-H{
-        position:absolute;
+        position:relative;
         top:10px;
         left:10px;
     }
@@ -149,7 +149,7 @@ nav ul li a {
            display:none;
     }
     .fechar-H{
-        position:absolute;
+        position:relative;
         top:10px;
         left:10px;
     }
