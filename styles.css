@@ -272,7 +272,6 @@ footer {
     top: 5px; /* Distância do topo */
     right: 5px; /* Distância da lateral direita */
     color: red;
-    padding:10px;
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
