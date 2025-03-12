@@ -71,7 +71,8 @@ function mostrarSabores(lanche) {
         "Casquinhas":["Casquinha. . . . . . . . . . . . . . . .R$:7,50","Casquinha Recheada c/Nutella R$:7,50","Casquinha Trufada . . . . . . R$:6,50","Cascão . . . . . . . . . . . . . . . . . . . R$:7,50","Cascão Trufado . . . . . . . . . R$:10,50"],
         "Sundaes":["Chocolate. . . . . . . . . . . . . . . . . . . . R$:9,00","Morango. . . . . . . . . . . . . . . . . . . . .R$:9,00","Nutella. . . . . . . . . . . . . . . . . . . . . .R$:10,50","Oreo. . . . . . . . . . . . . . . . . . . . . . . . R$:10,50", "Caramelo. . . . . . . . . . . . . . . . . . . R$:10,50", "Calda Quente. . . . . . . . . . . . . . . R$;11,50"," Top Chocolate. . . . . . . . . . . . . .R$:13,50","Top Morango. . . . . . . . . . . . . . .R$13,50","Top Caramelo. . . . . . . . . . . . . .R$:15,50"," Top Nutella. . . . . . . . . . . . . . . . R$:15,50"],
         "Açaí":["180ml. . . . . . . . . . . . . . . . . . . . . . . .R$:8,99","300ml. . . . . . . . . . . . . . . . . . . . . . .R$:11,99","500ml. . . . . . . . . . . . . . . . . . . . . .  R$:15,99","700ml . . . . . . . . . . . . . . . . . . . . . .R$:17,99"],
-        "Croassaint":["Queijo:. . . . . . . . . . . . . . . . . . . . . . .R$:9,00","Misto:. . . . . . . . . . . . . . . . . . . . . . . R$:9,00","Peito de Peru:. . . . . . . . . . . . . . . R$:9,00","Frango:. . . . . . . . . . . . . . . . . . . . . .R$:9,00"]
+        "Croassaint":["Queijo:. . . . . . . . . . . . . . . . . . . . . . .R$:9,00","Misto:. . . . . . . . . . . . . . . . . . . . . . . R$:9,00","Peito de Peru:. . . . . . . . . . . . . . . R$:9,00","Frango:. . . . . . . . . . . . . . . . . . . . . .R$:9,00"],
+        "Bolos":["Bolo Kit Kat","Bolo Ferrero Rocher", "Bolo Ouro Branco"]
     };
 
     if (!sabores[lanche]) {
