@@ -91,3 +91,100 @@ function mostrarSabores(lanche) {
 
     abrirModal("caixaSabores");
 }
+
+let pedido = [];
+let total = 0;
+let lancheAtual = "";
+let precoAtual = 0;
+
+const adicionais = [
+    { nome: "Bacon", preco: 2.00 },
+    { nome: "Cheddar", preco: 2.50 },
+    { nome: "Ovo", preco: 1.50 },
+    { nome: "Molho Especial", preco: 1.00 }
+];
+
+function abrirPersonalizacao(nome, preco) {
+    lancheAtual = nome;
+    precoAtual = preco;
+    
+    document.getElementById("tituloLanche").innerText = `Personalizar ${nome}`;
+    
+    let opcoes = document.getElementById("opcoes");
+    opcoes.innerHTML = "";
+    
+    adicionais.forEach((item, index) => {
+        opcoes.innerHTML += `
+            <label>
+                <input type="checkbox" value="${index}" data-preco="${item.preco}">
+                ${item.nome} (+R$ ${item.preco.toFixed(2)})
+            </label><br>
+        `;
+    });
+
+    document.getElementById("modal").style.display = "flex";
+}
+
+function fecharPersonalizacao() {
+    document.getElementById("modal").style.display = "none";
+}
+
+function adicionarAoPedido() {
+    let adicionaisSelecionados = [];
+    let inputs = document.querySelectorAll("#opcoes input:checked");
+    let precoFinal = precoAtual;
+
+    inputs.forEach(input => {
+        let index = input.value;
+        adicionaisSelecionados.push(adicionais[index].nome);
+        precoFinal += adicionais[index].preco;
+    });
+
+    pedido.push({ nome: lancheAtual, preco: precoFinal, adicionais: adicionaisSelecionados });
+    total += precoFinal;
+
+    atualizarPedido();
+    fecharPersonalizacao();
+}
+
+function atualizarPedido() {
+    let listaPedido = document.getElementById("lista-pedido");
+    let totalPedido = document.getElementById("total-pedido");
+
+    listaPedido.innerHTML = "";
+    pedido.forEach((item, index) => {
+        let li = document.createElement("li");
+        let adicionaisTexto = item.adicionais.length > 0 ? ` (Adicionais: ${item.adicionais.join(", ")})` : "";
+        li.innerHTML = `${item.nome} ${adicionaisTexto} - R$ ${item.preco.toFixed(2)}
+            <button onclick="removerItem(${index})">❌</button>`;
+        listaPedido.appendChild(li);
+    });
+
+    totalPedido.innerText = total.toFixed(2);
+}
+
+function removerItem(index) {
+    total -= pedido[index].preco;
+    pedido.splice(index, 1);
+    atualizarPedido();
+}
+
+function finalizarPedido() {
+    if (pedido.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
+    }
+
+    let mensagem = "Pedido:\n";
+    pedido.forEach(item => {
+        let adicionaisTexto = item.adicionais.length > 0 ? ` (Adicionais: ${item.adicionais.join(", ")})` : "";
+        mensagem += `- ${item.nome}${adicionaisTexto} R$ ${item.preco.toFixed(2)}\n`;
+    });
+
+    mensagem += `\nTotal: R$ ${total.toFixed(2)}`;
+
+    let numeroWhatsApp = "5522997302115"; // Substitua pelo número correto
+    let link = `https://wa.me/${5522997302115}?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(link, "_blank");
+}
