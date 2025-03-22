@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const modais = [
         "caixaSabores", "modalCardapio", "modalCardapioCombo",
         "modalCardapioPetis", "modalCardapioBat", "modalCardapioCappu",
-        "modalCardapioExp", "modalCardapioGel"
+        "modalCardapioExp", "modalCardapioGel", "modal", "modalCardapioB", "modalTamanhos",
     ];
 
     modais.forEach(id => {
@@ -54,137 +54,236 @@ function fecharModal(id) {
     if (modal) modal.style.display = "none";
 }
 
-/** 🔹 Exibir sabores ao clicar em um lanche */
-function mostrarSabores(lanche) {
-    const titulo = document.getElementById("tituloLanche");
-    const lista = document.getElementById("listaSabores");
-    const modal = document.getElementById("caixaSabores");
+const adicionaisLista = {
+    lanche: [{ nome: "Picanha", preco: 3.00 }],
+    combo: [
+        { nome: "Combo", preco: 12.00 },
+    ],
+ 
+    tamanhos: [
+        { nome: "Pequeno (300ml)", preco: 0.00 },
+        { nome: "Médio (500ml)", preco: 3.50 },
+        { nome: "Grande (700ml)", preco: 5.50 }
+    ],
 
-    if (!titulo || !lista || !modal) {
-        console.error("Elemento não encontrado no HTML!");
-        return;
-    }
+    sorvete: [
+        { nome: "Nutella", preco: 3.00 },
+        { nome: "Ovomaltine", preco: 2.50 },
+        { nome: "Chantilly", preco: 2.00 },
+        { nome: "Granulado", preco: 1.50 }
+    ],
+    petisco: [{ nome: "Fritas", preco: 10.00 }],
+    cappu: [
+        { nome: "Borda de Nutella", preco: 3.00 },
+        { nome: "Borda de Doce de Leite", preco: 3.00 },
+        { nome: "Borda de Brigadeiro", preco: 3.00 }
+    ],
+    batata:[{ nome: "Batata P", preco: 0.00},
+            { nome: "Batata G", preco: 4.00}  
+    ],
+    wavesmax: [
+        { nome: "Ovomaltine", preco: 0.00 },
+        { nome: "Sonho de Valsa", preco: 0.00 },
+        { nome: "Ouro Branco", preco: 0.00 },
+        { nome: "Mini Oreo", preco: 0.00 },
+        { nome: "Kit Kat", preco: 0.00 },
+        { nome: "Prestigio", preco: 0.00 },
+        { nome: "M&M", preco: 0.00 },
+        { nome: "Bis", preco: 0.00 }
+    ], 
+    açai:[ 
+        {nome: "180ml", preco: 0.00},
+        {nome: "300ml", preco: 3.00},
+        {nome: "500ml", preco: 7.00},
+        {nome: "700ml", preco: 9.00}  
+    ],  
+    sundae:[
+        {nome: "Chocolate", preco: 0.00},
+        {nome: "Morango", preco: 0.00},
+        {nome: "Nutella", preco: 1.50},  
+        {nome: "Oreo", preco: 1.50},
+        {nome: "Caramelo", preco: 1.50},
+        {nome: "Calda Quente", preco: 2.50},
+        {nome: "Top Chocolate", preco: 4.50},
+        {nome: "Top Morango", preco: 4.50},
+        {nome: "Top Caramelo", preco: 6.50},
+        {nome: "Top Nutella", preco: 6.50},
+    ],  
+    casquinha:[
+        {nome: "Açaí", preco: 0.00},
+        {nome: "Baunilha", preco: 0.00},
+        {nome: "Açaí c/ Baunilha", preco: 0.00},
+    ], 
+    croassaint:[
+        {nome: "Queijo", preco: 0.00},
+        {nome: "Misto", preco: 0.00},
+        {nome: "Peito de Peru", preco: 0.00},
+        {nome: "Frango", preco: 0.00}
+    ],
+    bolo:[
+        {nome: "Kit Kat", preco: 0.00},
+        {nome: "Ferrero Rocher", preco: 0.00},
+        {nome: "Ouro Branco", preco: 0.00},
+    ],
+    mate: [
+        {nome: "Natural", preco:0.00},
+        {nome: "Limão", preco:0.00},
+        {nome: "Pêssego", preco:0.00},
+    ],
+    cha: [
+        {nome: "Maça Verde", preco:0.00},
+        {nome: "Limão Sicilliano", preco:0.00},
+        {nome: "Cranberry", preco:0.00},
+        {nome: "Tangerina", preco:0.00},
+        {nome: "Morango ", preco:0.00},
+        {nome: "Pêssego", preco:0.00}, 
+    ],
+    agua:[
+        {nome: "S/Gás",preco: 0.00}, 
+        {nome: "C/Gás",preco: 1.00}  
+    ],
+    refri:[
+        {nome: "Lata",preco:0.00},
+        {nome: "600ml",preco:3.00}
+    ]
 
-    const sabores = {
-        "Waves Max": ["Ovomaltine", "Sonho de Valsa", "Ouro Branco","Mini Oreo","Kit Kat","Prestigio","M&M","Bis"], 
-        "Milk Shake": ["Morango", "Morango c/Nutella", "Ninho"," Ninho c/Nutella","Maracuja","Maracuja c/Nutella","Ovomaltine","Oreo","Nutella","Paçoca","Flocos","Açaí c/Nutella"],
-        "Casquinhas":["Casquinha. . . . . . . . . . . . . . . .R$:7,50","Casquinha Recheada c/Nutella R$:7,50","Casquinha Trufada . . . . . . R$:6,50","Cascão . . . . . . . . . . . . . . . . . . . R$:7,50","Cascão Trufado . . . . . . . . . R$:10,50"],
-        "Sundaes":["Chocolate. . . . . . . . . . . . . . . . . . . . R$:9,00","Morango. . . . . . . . . . . . . . . . . . . . .R$:9,00","Nutella. . . . . . . . . . . . . . . . . . . . . .R$:10,50","Oreo. . . . . . . . . . . . . . . . . . . . . . . . R$:10,50", "Caramelo. . . . . . . . . . . . . . . . . . . R$:10,50", "Calda Quente. . . . . . . . . . . . . . . R$;11,50"," Top Chocolate. . . . . . . . . . . . . .R$:13,50","Top Morango. . . . . . . . . . . . . . .R$13,50","Top Caramelo. . . . . . . . . . . . . .R$:15,50"," Top Nutella. . . . . . . . . . . . . . . . R$:15,50"],
-        "Açaí":["180ml. . . . . . . . . . . . . . . . . . . . . . . .R$:8,99","300ml. . . . . . . . . . . . . . . . . . . . . . .R$:11,99","500ml. . . . . . . . . . . . . . . . . . . . . .  R$:15,99","700ml . . . . . . . . . . . . . . . . . . . . . .R$:17,99"],
-        "Croassaint":["Queijo:. . . . . . . . . . . . . . . . . . . . . . .R$:9,00","Misto:. . . . . . . . . . . . . . . . . . . . . . . R$:9,00","Peito de Peru:. . . . . . . . . . . . . . . R$:9,00","Frango:. . . . . . . . . . . . . . . . . . . . . .R$:9,00"],
-        "Bolos":["Bolo Kit Kat","Bolo Ferrero Rocher", "Bolo Ouro Branco"]
-    };
-
-    if (!sabores[lanche]) {
-        console.error("Lanche não encontrado no menu!");
-        return;
-    }
-
-    titulo.innerText = `Escolha o sabor do ${lanche}`;
-    lista.innerHTML = ""; // Limpa a lista antes de adicionar novos itens
-
-    sabores[lanche].forEach(sabor => {
-        let li = document.createElement("li");
-        li.innerText = sabor;
-        lista.appendChild(li);
-    });
-
-    abrirModal("caixaSabores");
-}
+};
 
 let pedido = [];
 let total = 0;
 let lancheAtual = "";
 let precoAtual = 0;
+let adicionais = [];
+let tamanho
 
-const adicionais = [
-    { nome: "Bacon", preco: 2.00 },
-    { nome: "Cheddar", preco: 2.50 },
-    { nome: "Ovo", preco: 1.50 },
-    { nome: "Molho Especial", preco: 1.00 }
-];
-
-function abrirPersonalizacao(nome, preco) {
+function abrirPersonalizacao(nome, preco, tipo) {
     lancheAtual = nome;
     precoAtual = preco;
-    
+    adicionais = adicionaisLista[tipo] || [];
+
     document.getElementById("tituloLanche").innerText = `Personalizar ${nome}`;
     
     let opcoes = document.getElementById("opcoes");
     opcoes.innerHTML = "";
+  
+    let isSingleChoice = (adicionaisLista); // Apenas um pode ser selecionado
     
     adicionais.forEach((item, index) => {
         opcoes.innerHTML += `
             <label>
-                <input type="checkbox" value="${index}" data-preco="${item.preco}">
+                <input type="${isSingleChoice ? 'radio' : 'checkbox'}" name="adicional-${tipo}" value="${index}" data-preco="${item.preco}">
                 ${item.nome} (+R$ ${item.preco.toFixed(2)})
             </label><br>
         `;
     });
 
-    document.getElementById("modal").style.display = "flex";
+    abrirModal("modal");
 }
 
+
+
 function fecharPersonalizacao() {
-    document.getElementById("modal").style.display = "none";
+    fecharModal("modal");
 }
 
 function adicionarAoPedido() {
     let adicionaisSelecionados = [];
-    let inputs = document.querySelectorAll("#opcoes input:checked");
     let precoFinal = precoAtual;
 
-    inputs.forEach(input => {
-        let index = input.value;
-        adicionaisSelecionados.push(adicionais[index].nome);
-        precoFinal += adicionais[index].preco;
+    document.querySelectorAll("#opcoes input:checked").forEach(input => {
+        let index = parseInt(input.value);
+        if (index >= 0 && index < adicionais.length) {
+            adicionaisSelecionados.push(adicionais[index].nome);
+            precoFinal += adicionais[index].preco;
+        }
     });
 
     pedido.push({ nome: lancheAtual, preco: precoFinal, adicionais: adicionaisSelecionados });
     total += precoFinal;
 
+    salvarPedidoNoLocalStorage();
     atualizarPedido();
     fecharPersonalizacao();
 }
 
+function salvarPedidoNoLocalStorage() {
+    localStorage.setItem("pedido", JSON.stringify(pedido));
+    localStorage.setItem("total", total);
+}
+
+/** 🔹 Carregar pedido do localStorage */
+function carregarPedidoDoLocalStorage() {
+    let pedidoSalvo = localStorage.getItem("pedido");
+    let totalSalvo = localStorage.getItem("total");
+
+    if (pedidoSalvo) {
+        pedido = JSON.parse(pedidoSalvo);
+        total = parseFloat(totalSalvo);
+        atualizarPedido();
+    }
+}
 function atualizarPedido() {
     let listaPedido = document.getElementById("lista-pedido");
     let totalPedido = document.getElementById("total-pedido");
 
+    if (!listaPedido || !totalPedido) {
+        console.error("Elementos do carrinho não encontrados!");
+        return;
+    }
+
     listaPedido.innerHTML = "";
     pedido.forEach((item, index) => {
-        let li = document.createElement("li");
-        let adicionaisTexto = item.adicionais.length > 0 ? ` (Adicionais: ${item.adicionais.join(", ")})` : "";
-        li.innerHTML = `${item.nome} ${adicionaisTexto} - R$ ${item.preco.toFixed(2)}
-            <button onclick="removerItem(${index})">❌</button>`;
-        listaPedido.appendChild(li);
+        let adicionaisTexto = item.adicionais.length > 0 ? `(Adicionais: ${item.adicionais.join(", ")})` : "";
+        listaPedido.innerHTML += `
+            <li>${item.nome} ${adicionaisTexto} - R$ ${item.preco.toFixed(2)}
+                <button onclick="removerItem(${index})">❌</button>
+            </li>`;
     });
 
     totalPedido.innerText = total.toFixed(2);
+    salvarPedidoNoLocalStorage();
 }
 
+/** 🔹 Remover item do pedido */
 function removerItem(index) {
-    total -= pedido[index].preco;
-    pedido.splice(index, 1);
-    atualizarPedido();
+    if (index >= 0 && index < pedido.length) {
+        total -= pedido[index].preco;
+        pedido.splice(index, 1);
+        atualizarPedido();
+    }
 }
 
+/** 🔹 Finalizar pedido via WhatsApp */
 function finalizarPedido() {
     if (pedido.length === 0) {
         alert("Seu carrinho está vazio!");
         return;
     }
 
-    let mensagem = "Pedido:\n";
-    pedido.forEach(item => {
-        let adicionaisTexto = item.adicionais.length > 0 ? ` (Adicionais: ${item.adicionais.join(", ")})` : "";
-        mensagem += `- ${item.nome}${adicionaisTexto} R$ ${item.preco.toFixed(2)}\n`;
-    });
-
+    let mensagem = pedido.map(item => `- ${item.nome} (${item.adicionais.join(", ")}) R$ ${item.preco.toFixed(2)}`).join("\n");
     mensagem += `\nTotal: R$ ${total.toFixed(2)}`;
 
-    let numeroWhatsApp = "5522997302115"; // Substitua pelo número correto
-    let link = `https://wa.me/${5522997302115}?text=${encodeURIComponent(mensagem)}`;
+    let numeroWhatsApp = "5522997302115";
+    let link = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 
-    window.open(link, "_blank");
+    if (mensagem.length > 1000) {
+        alert("O pedido é muito grande! Será enviado em partes.");
+        let partes = mensagem.match(/.{1,900}/g);
+        partes.forEach((parte, i) => {
+            setTimeout(() => {
+                let linkParcial = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(parte)}`;
+                window.open(linkParcial, "_blank");
+            }, i * 1000);
+        });
+    } else {
+        window.open(link, "_blank");
+    }
+}
+
+/** 🔹 Alternar exibição do carrinho */
+function toggleCarrinho() {
+    let carrinho = document.getElementById("carrinho-modal");
+    if (carrinho) {
+        carrinho.style.display = carrinho.style.display === "block" ? "none" : "block";
+    }
 }
