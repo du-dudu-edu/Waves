@@ -1,3 +1,9 @@
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".menu-items").forEach(item => {
+        item.style.display = "none"; // Garante que todos começam fechados
+    });
+});
+
 let cart = [];
 let selectedItem = {};
 
