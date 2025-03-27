@@ -48,8 +48,16 @@ nav a {
     .menu-toggle {
         display: block; /* Show on mobile */
     }
-    .menu-item{
-	    width:35%;
+    .menu-items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adapta os itens */
+       gap: 10px;;
+    }
+
+    .menu-item {
+        width:80%;
+        grid-template-columns: repeat(2, 1fr); /* Sempre 2 itens por linha */
+        gap: 10px;
     }
 
     nav {
