@@ -209,19 +209,6 @@ nav a {
     border-radius: 5px;
 }
 
-
-
-@media (max-width: 768px) {
-    .menu-items {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .menu-item {
-        width: 90%;
-    }
-}
 form {
     max-width: 400px;
     margin: 0 auto;
