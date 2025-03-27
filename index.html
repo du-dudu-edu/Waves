@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio - Waves</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="destaque">Nosso Cardápio</h1>
+        <nav>
+            <a href="index.html">Cardápio</a>
+            <a href="reviews.html">Avaliações</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hambúrgueres -->
+        <section class="menu-category">
+            <h2 onclick="toggleCategory(this)">🍔 Hambúrgueres ▼</h2>
+            <div class="menu-items">
+                <div class="menu-item" onclick="showCustomization('Waves Burguer', 13.99)">
+                    <img src="images/x burguer.jpg" alt="Waves Burguer">
+                    <h3>1.Waves Burguer</h3>
+                    <p>Pão,carne,alface e maionese</p>
+                    <p class="price">R$:13,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('X-Burguer', 15.50)">
+                    <img src="images/c burguer.jpg" alt="X-Burguer">
+                    <h3>2.X-Burguer</h3>
+                    <p>Pão, carne, queijo, alface e maionese</p>
+                    <p class="price">R$15,50</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('X-Bacon', 17.50)">
+                    <img src="images/x bacon.jpg" alt="X-Bacon">
+                    <h3>3.X-Bacon</h3>
+                    <p>Pão, carne, bacon, alface e maionese.</p>
+                    <p class="price">R$17,50</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('X-Calabresa', 17.50)">
+                    <img src="images/x-calbresa.jpg" alt="X-Calabresa">
+                    <h3>4.X-Calabresa</h3>
+                    <p>Pão, carne, calabresa, alface e maionese</p>
+                    <p class="price">R$12,99</p>
+
+               </div>
+
+              <div class="menu-item" onclick="showCustomization('X-Egg', 19.99)">
+                    <img src="images/x egg.jpg" alt="X-Egg">
+                    <h3>5.X-Egg</h3>
+                    <p>Pão, carne, ovo, alface e maionese</p>
+                    <p class="price">R$19,99</p>
+             </div>
+
+             <div class="menu-item" onclick="showCustomization('Cheddar Prime', 19.50)">
+                    <img src="images/cheddar prime.jpg" alt="Cheddar Prime">
+                    <h3>6.Cheddar Prime</h3>
+                    <p>Pão,carne picanha 120g,cheddar cremoso e cebola caramelizada</p>
+                    <p class="price">R$19,50</p>
+             </div>
+
+             <div class="menu-item" onclick="showCustomization('X-tudo', 26.50)">
+                    <img src="images/X-tudo.jpg" alt="X-tudo">
+                    <h3>7.X-tudo</h3>
+                    <p>Pão, carne, queijo, ovo, bacon, calabresa, alface e maionese</p>
+                    <p class="price">R$26,50</p>
+             </div>
+
+             <div class="menu-item" onclick="showCustomization('Duplo X-Burguer', 25.50)">
+                    <img src="images/x duplo.jpg" alt="Duplo X-Burguer">
+                    <h3>8.Duplo X-Burguer</h3>
+                    <p>Pão,2 carnes,2 queijos, alface e maionese</p>
+                    <p class="price">R$25,50</p>
+             </div>
+
+             <div class="menu-item" onclick="showCustomization('Waves Montanha', 27.99)">
+                    <img src="images/Waves Montanha.jpg" alt="Waves Montanha">
+                    <h3>9.Waves Montanha</h3>
+                    <p>2 Pães, 2 carnes, 2 queijos, ovo, bacon, calabresa, alface e maionese.</p>
+                    <p class="price">R$27,99</p>
+             </div>
+
+            <div class="menu-item" onclick="showCustomization('Big Waves', 29.99)">
+                    <img src="images/big waves.jpg" alt="Big Waves">
+                    <h3>10.Big Waves</h3>
+                    <p>Pão,3 carnes,3 queijos,ovo,alface e maionese.</p>
+                    <p class="price">R$29,99</p>
+            </div>
+
+            <div class="menu-item" onclick="showCustomization('Waves Premium Artesanal', 34.99)">
+                    <img src="images/waves premium.jpg" alt="Waves Premium Artesanal">
+                    <h3>11.Waves Premium Artesanal</h3>
+                    <p>Pão brioche,carne de picanha 180g,queijo cheddar, bacon.</p>
+                    <p class="price">R$34,99</p>
+            </div>
+
+            <div class="menu-item" onclick="showCustomization('Delicia de Frango', 20.50)">
+                    <img src="images/frango.jpg" alt="Delicia de Frango">
+                    <h3>Delicia de Frango</h3>
+                    <p>Dois hambúrgueres, queijo duplo, cebola e bacon.</p>
+                    <p class="price">R$20,50</p>
+            </div>
+
+            <div class="menu-item" onclick="showCustomization('Gula de Filé', 27.50)">
+                    <img src="images/filé.jpg" alt="Gula de Filé">
+                    <h3>Gula de Filé</h3>
+                    <p>Dois hambúrgueres, queijo duplo, cebola e bacon.</p>
+                    <p class="price">R$27,50</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="menu-category">
+            <h2 onclick="toggleCategory(this)">🍔🍟 Combos e Petiscos▼</h2>
+            <div class="menu-items">
+			
+			    <div class="menu-item" onclick="showCustomization('Petisco Calabresa', 29.99)">
+                    <img src="images/calabresa.jpg" alt="Petisco Calabresa">
+                    <h3>Petisco Calabresa</h3>
+                    <p>Bandeja de Calabresa + Farofa.</p>
+                    <p class="price">R$29,99</p>
+                </div>
+				
+				<div class="menu-item" onclick="showCustomization('Petisco Pernil', 39.99)">
+                    <img src="images/pernil.jpg" alt="Petisco Pernil">
+                    <h3>Petisco Pernil</h3>
+                    <p>Bandeja de Pernil + Farofa.</p>
+                    <p class="price">R$39,99</p>
+                </div>
+				
+				<div class="menu-item" onclick="showCustomization('Petisco Alcatra', 49.99)">
+                    <img src="images/alcatra.jpg" alt="Petisco Alcatra">
+                    <h3>Petisco Alcatra</h3>
+                    <p>Bandeja de Alcatra + Farofa.</p>
+                    <p class="price">R$49,99</p>
+                </div>
+				
+				<div class="menu-item" onclick="showCustomization('Batata Waves', 38.00)">
+                    <img src="images/batata waves.jpg" alt="Batata Waves">
+                    <h3>Batata Waves</h3>
+                    <p>Batata Frita Coberta c/Queijo Cheddar e Bacon.</p>
+                    <p class="price">R$38,00</p>
+                </div>
+				
+				<div class="menu-item" onclick="showCustomization('Batata Maluca', 33.00)">
+                    <img src="images/batata maluca.jpg" alt="Batata Maluca">
+                    <h3>Batata Maluca</h3>
+                    <p>Batata Frita Coberta c/Queijo Provolone, calabresa e Cebola.</p>
+                    <p class="price">R$33,00</p>
+                </div>
+				
+                <div class="menu-item" onclick="showCustomization('Combo 1', 19.99)">
+                    <h3>Combo 1</h3>
+                    <p>Waves burguer(Carne ou frango),refri lata, batata P.</p>
+                    <p class="price">R$19,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Combo 2', 24.99)">
+                    <h3>Combo 2</h3>
+                    <p>X-Calabresa ou X-Bacon(Carne ou frango),refri lata, batata P.</p>
+                    <p class="price">R$24,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Combo 3', 29.99)">
+                    <h3>Combo 3</h3>
+                    <p>X-Tudo(Carne ou frango),refri lata, batata P.</p>
+                    <p class="price">R$29,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Combo 4', 35.99)">
+                    <h3>Combo 4</h3>
+                    <p>Big Waves(Carne ou frango),refri lata, batata P.</p>
+                    <p class="price">R$35,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Combo 5', 55.99)">
+                    <h3>Combo 5</h3>
+                    <p>2 X-Tudo(Carne ou frango),refri lata, batata P.</p>
+                    <p class="price">R$55,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Combo 6', 49.99)">
+                    <h3>Combo 6</h3>
+                    <p>2 X-Tudo(Carne ou frango),2 Milk Shake 300ml.</p>
+                    <p class="price">R$49,99</p>
+                </div>
+				
+				
+            </div>
+         </section>
+
+        <!-- Sobremesas -->
+        <section class="menu-category">
+            <h2 onclick="toggleCategory(this)">🥤🍷 Bebidas ▼</h2>
+            <div class="menu-items">
+                <div class="menu-item" onclick="showCustomization('Guaravita', 3.00)">
+                    <img src="images/guaravita.png" alt="Guaravita">
+                    <h3>Guaravita.</h3>
+                    <p class="price">R$3,00</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Água', 3.00)">
+                    <img src="images/agua.jpg" alt="Água">
+                    <h3>Água.</h3>
+                    <p class="price">R$3,00</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Refrigerante', 6.00)">
+                    <img src="images/refri.jpg" alt="Refrigerante">
+                    <h3>Refrigerante.</h3>
+                    <p class="price">R$6,00</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('MATE 280ml', 10.00)">
+                    <img src="images/mate.jpg" alt="MATE 280ml">
+                    <h3>MATE 280ml</h3>
+                    <p>30g de Mate,200ml de Água, batido com Gelo.</p>
+                    <p class="price">R$10,00</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Chá da Casa 280ml', 14.99)">
+                    <img src="images/cha.jpg" alt="Chá da Casa">
+                    <h3>Chá da Casa 280ml</h3>
+                    <p class="price">R$14,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Soda Italiana 280ml', 14.99)">
+                    <img src="images/soda italiana.jpg" alt="Soda Italiana">
+                    <h3>Soda Italiana 280ml</h3>
+                    <p class="price">R$14,99</p>
+                </div>
+				
+				<div class="menu-item" onclick="showCustomization('Sucos', 8.99)">
+                    <img src="images/suco.jpg" alt="Sucos">
+                    <h3>Sucos</h3>
+                    <p class="price">R$8,99</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobremesas -->
+        <section class="menu-category">
+            <h2 onclick="toggleCategory(this)">🍦 Sorvetes ▼</h2>
+            <div class="menu-items">
+                <div class="menu-item" onclick="showCustomization('Casquinha', 7.50)">
+                    <img src="images/casquinha.jpg" alt="Brownie com Sorvete">
+                    <h3>Casquinha</h3>
+       
+                    <p class="price">R$7,50</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Açaí no copo', 8.99)">
+                    <img src="images/açai.jpg" alt="Brownie com Sorvete">
+                    <h3>Açaí no copo</h3>
+        
+                    <p class="price">R$8,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Petit Gateau', 16.50)">
+                    <img src="images/peti gatou.jpg" alt="Petit Gateau">
+                    <h3>Petit Gateau</h3>
+       
+                    <p class="price">R$16,50</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Waves Max', 15.99)">
+                    <img src="images/waves max.jpg" alt="Waves Max">
+                    <h3>Waves Max</h3>
+     
+                    <p class="price">R$15,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Milk Shakes', 15.50)">
+                    <img src="images/milkshake.jpg" alt="Milk Shakes">
+                    <h3>Milk Shakes</h3>
+        
+                    <p class="price">R$15,50</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Sundaes', 9.00)">
+                    <img src="images/sundae.jpg" alt="Sundaes">
+                    <h3>Sundaes</h3>
+        
+                    <p class="price">R$9,00</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Top Sundae', 13.50)">
+                    <img src="images/top sundae.jpg" alt="Top Sundae">
+                    <h3>Top Sundae</h3>
+        
+                    <p class="price">R$13,50</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-category">
+            <h2 onclick="toggleCategory(this)">☕ Cafés ▼</h2>
+            <div class="menu-items">
+                <div class="menu-item" onclick="showCustomization('Expresso Carioca', 4.99)">
+                    <img src="images/carioca.jpg" alt="Expresso Carioca">
+                    <h3>Expresso Carioca</h3>
+                    <p>Expresso curto + Água Quente.</p>
+                    <p class="price">R$4,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Expresso', 5.99)">
+                    <img src="images/expresso.jpg" alt="Expresso">
+                    <h3>Expresso</h3>
+                    <p>Curto(35ml) ou Longo(50ml).</p>
+                    <p class="price">R$5,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Drip Coffe', 5.99)">
+                    <img src="images/drip.jpg" alt="Drip Coffe">
+                    <h3>Drip Coffe</h3>
+                    <p>Café Coado (50ml).</p>
+                    <p class="price">R$5,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Machiatto', 7.99)">
+                    <img src="images/macchiato.jpg" alt="Machiatto">
+                    <h3>Machiatto</h3>
+                    <p>Expresso curto + Espuma de Leite Vaporizado(60ml).</p>
+                    <p class="price">R$7,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Expresso Duplo', 8.99)">
+                    <img src="images/duplo.jpg" alt="Expresso Duploe">
+                    <h3>Expresso Duplo</h3>
+                    <p>Duas Doses de Café em uma Xícara Grande(50ml).</p>
+                    <p class="price">R$8,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Cappuccino Italiano', 12.99)">
+                    <img src="images/italiano.jpg" alt="Cappuccino Italiano">
+                    <h3>Cappuccino Italiano</h3>
+                    <p>Expresso curto + Leite Vaporizado.</p>
+                    <p class="price">R$12,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Iced Latte', 12.99)">
+                    <img src="images/iced latte.jpg" alt="Iced Latte">
+                    <h3>Iced Latte</h3>
+                    <p>Café Expresso Gelado e Leite Cremoso.</p>
+                    <p class="price">R$12,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Cappuccino Tradicional', 14.99)">
+                    <img src="images/cappuccino.jpg" alt="Cappuccino Tradicional">
+                    <h3>Cappuccino Tradicional</h3>
+                    <p>Feito com Café Expresso e Leite.</p>
+                    <p class="price">R$14,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Chocolate Quente Cremoso', 14.99)">
+                    <img src="images/chocolate quente.jpg" alt="Chocolate Quente Cremoso">
+                    <h3>Chocolate Quente Cremoso</h3>
+                    <p>Leite Vaporizado(120ml) + Chocolate(30g).</p>
+                    <p class="price">R$14,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Affogato', 15.00)">
+                    <img src="images/affogato.jpg" alt="Affogato">
+                    <h3>Affogato</h3>
+                    <p>Sorvete de Creme e Café Expresso.</p>
+                    <p class="price">R$15,00</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Mocaccino Gelado', 15.99)">
+                    <img src="images/mocaccino.jpg" alt="Mocaccino Gelado">
+                    <h3>Mocaccino Gelado</h3>
+                    <p>Nutella, Gelo, Café Expresso e Leite Cremoso.</p>
+                    <p class="price">R$15,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Chocotela', 16.00)">
+                    <img src="images/chocotela.jpg" alt="Chocotela">
+                    <h3>Chocotela</h3>
+                    <p>Chocolate Quente Europeu com Borda de Nutella.</p>
+                    <p class="price">R$16,00</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Mocaccino Gianduia', 16.00)">
+                    <img src="images/gianduia.jpg" alt="Mocaccino Gianduia">
+                    <h3>Mocaccino Gianduia</h3>
+                    <p>Nutella, Café Expresso,Leite Vaporizado e Espuma de Leite.</p>
+                    <p class="price">R$16,00</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Cappuccino de Nutella', 17.99)">
+                    <img src="images/cappuN.jpg" alt="Cappuccino de Nutella">
+                    <h3>Cappuccino de Nutella</h3>
+                    <p>Nutella, Cappuccino e Borda de Nutella.</p>
+                    <p class="price">R$17,99</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Cappuccino de Nutella c/Brigadeiro', 18.99)">
+                    <img src="images/chocolateN.jpg" alt="Cappuccino de Nutella c/Brigadeiro">
+                    <h3>Cappuccino de Nutella c/Brigadeiro</h3>
+                    <p>Nutella,Brigadeiro e Cappuccino.</p>
+                    <p class="price">R$18,99</p>
+                </div>
+            </div>
+        </section> 
+		
+		<section class="menu-category">
+            <h2 onclick="toggleCategory(this)">🥐🍰 Salgados e Doces ▼</h2>
+            <div class="menu-items">
+                <div class="menu-item" onclick="showCustomization('Croassaint', 9.00)">
+                    <img src="images/croassaint 2.jpg" alt="Croassaint">
+                    <h3>Croassaint.</h3>
+                    <p class="price">R$9,00</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Coxinha', 9.00)">
+                    <img src="images/coxinha.jpg" alt="Coxinha">
+                    <h3>Coxinha.</h3>
+                    <p class="price">R$9,00</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Pão de Queijo', 3.50)">
+                    <img src="images/pão de queijo.jpg" alt="Pão de Queijo">
+                    <h3>Pão de Queijo.</h3>
+                    <p class="price">R$3,50</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Torta de Limão', 10.00)">
+                    <img src="images/painel torta.jpg" alt="Torta de Limão">
+                    <h3>Torta de Limão</h3>
+                    <p class="price"> Fatia R$10,00</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Pudim', 10.00)">
+                    <img src="images/pudim.jpg" alt="Pudim">
+                    <h3>Pudim</h3>
+                    <p class="price">Fatia R$10,0</p>
+                </div>
+
+                <div class="menu-item" onclick="showCustomization('Brownie', 14.99)">
+                    <img src="images/bolo fatia.jpg" alt="Brownie">
+                    <h3>Brownie</h3>
+                    <p class="price">R$10,00</p>
+                </div>
+				
+				<div class="menu-item" onclick="showCustomization('Bolos', 10.00)">
+                    <img src="images/bolo.jpg" alt="Bolos">
+                    <h3>Bolos</h3>
+                    <p class="price">Fatia R$10,00</p>
+                </div>
+            </div>
+        </section>
+
+<div id="custom-popup" class="popup">
+    <div class="popup-content">
+        <h2 id="popup-title"></h2>
+        <div id="custom-options"></div>
+        <div class="popup-buttons">
+            <button onclick="confirmCustomization()">Confirmar</button>
+            <button onclick="closePopup()">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+        <div id="cart-button" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
+    <!-- Pop-up do Carrinho -->
+<div id="cart-popup" class="popup">
+    <div class="popup-content">
+        <h2>Seu Pedido</h2>
+        <ul id="cart-list"></ul>
+        <button id="send-order" onclick="sendOrder()">Enviar Pedido via WhatsApp</button>
+        <button class="close-btn" onclick="toggleCart()">Fechar</button>
+    </div>
+</div> 
+    
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

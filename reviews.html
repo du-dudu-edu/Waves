@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliações - Waves</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Avaliações dos Clientes</h1>
+        <nav>
+            <a href="index.html">Cardápio</a>
+            <a href="reviews.html">Avaliações</a>
+            <a href="contact.html">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>O que nossos clientes dizem?</h2>
+        <div id="reviews-container">
+            <!-- Avaliações aparecerão aqui -->
+        </div>
+
+        <h2>Deixe sua avaliação</h2>
+        <form id="review-form">
+            <input type="text" id="name" placeholder="Seu Nome" required>
+            <textarea id="review-text" placeholder="Escreva sua avaliação..." required></textarea>
+            <select id="rating">
+                <option value="5">⭐⭐⭐⭐⭐ - Excelente</option>
+                <option value="4">⭐⭐⭐⭐ - Muito Bom</option>
+                <option value="3">⭐⭐⭐ - Bom</option>
+                <option value="2">⭐⭐ - Regular</option>
+                <option value="1">⭐ - Ruim</option>
+            </select>
+            <button type="submit">Enviar Avaliação</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
