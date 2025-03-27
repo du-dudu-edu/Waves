@@ -46,6 +46,11 @@ nav a {
 
 /* Responsive Navigation */
 @media (max-width: 768px) {
+     header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+    } 
      .avaliacoes-link {
         font-size: 14px;
         padding: 6px 10px;
@@ -84,6 +89,23 @@ nav a {
 
     nav.show {
         display: flex;
+    }
+
+	.reviews-container {
+        width: 80%;
+        padding: 10px;
+    }
+
+    .review {
+        padding: 12px;
+    }
+
+    .review h3 {
+        font-size: 16px;
+    }
+
+    .review p {
+        font-size: 13px;
     }
 }
 
