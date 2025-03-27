@@ -49,6 +49,7 @@ nav a {
         font-size: 14px;
         padding: 6px 10px;
         right: 10px;
+	top: 10px;
     }
 	
     .menu-toggle {
