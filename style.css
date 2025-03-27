@@ -48,6 +48,9 @@ nav a {
     .menu-toggle {
         display: block; /* Show on mobile */
     }
+    .menu-item{
+	    width:35%;
+    }
 
     nav {
         display: none;
