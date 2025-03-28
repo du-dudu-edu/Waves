@@ -316,17 +316,82 @@ form button {
         font-size: 16px;
         padding: 20px;
     }
+	 .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
 }
-}
+
 
 footer {
-    background: #222;
+    background-color: #402C21 !important;
+	z-index: 999;
     color: white;
-    padding: 15px;
+    padding: 30px 20px;
     text-align: center;
-    font-size: 14px;
 }
 
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo img {
+    max-width: 120px;
+}
+
+.footer-info, .footer-links, .footer-social {
+    margin: 15px;
+}
+
+.footer-info p {
+    font-size: 14px;
+    max-width: 250px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 5px 0;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #ff9800;
+}
+
+.footer-social .social-icon {
+    display: inline-block;
+    margin: 5px;
+}
+
+.footer-social .social-icon img {
+    width: 30px;
+    transition: transform 0.3s;
+}
+
+.footer-social .social-icon img:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 10px;
+}
 
 .order-container {
     max-width: 400px;
@@ -544,28 +609,61 @@ footer {
 }
 
 /* Formulário de Avaliação */
-#review-form {
+.reviews-container {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background: #f8f8f8;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.review {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
-    border-radius: 8px;
+    width: 280px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-#review-form input,
-#review-form textarea,
-#review-form select,
-#review-form button {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+#review-form input {
+    width: 100%; /* Garante que o input não passe do limite do formulário */
+    max-width: 300px; /* Define um tamanho máximo adequado */
+}
+.review:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-#review-form button {
-    background: #ff9800;
-    color: white;
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff9800;
+}
+
+.review h3 {
     font-size: 16px;
-    cursor: pointer;
+    margin: 0;
+    color: #333;
+}
+
+.rating {
+    font-size: 14px;
+    color: #ff9800;
+}
+
+.review-text {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
 }
