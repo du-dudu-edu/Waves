@@ -53,7 +53,7 @@ function removeFromCart(index) {
 
 // Exibe o pop-up de personalização de acordo com a categoria
 function showCustomization(itemName, price) {
-    selectedItem = { name: itemName, price: price };
+    selectedItem = {name: itemName, price: price, ingredients: {}, basePrice: price};
 
     let customOptions = document.getElementById("custom-options");
     customOptions.innerHTML = "";
@@ -65,6 +65,17 @@ function showCustomization(itemName, price) {
             <label><input type="radio" name="meat" value="Carne" checked> Carne</label><br>
             <label><input type="radio" name="meat" value="Frango"> Frango</label><br>
             <label><input type="radio" name="meat" value="Picanha"> Picanha (+R$3,00)</label><br>
+			<h4>Adicione ou remova ingredientes:</h4>
+            <div id="ingredient-list">
+                ${generateIngredientOptions()}
+            </div>
+        `;
+    } else if (itemName.includes("Premium") || itemName.includes("Cheddar")) {
+        customOptions.innerHTML = `
+			<h4>Adicione ou remova ingredientes:</h4>
+            <div id="ingredient-list">
+                ${generateIngredientOptions()}
+            </div>
         `;
     } else if (itemName.includes("Casquinha")) {
         customOptions.innerHTML = `
@@ -215,11 +226,65 @@ function showCustomization(itemName, price) {
     document.getElementById("custom-popup").style.display = "block";
 }
 
+function generateIngredientOptions() {
+    let ingredients = [
+	    { name: "Alface", price: 0.5 },
+        { name: "Bacon", price: 2.00 },
+        { name: "Calabresa", price: 3.00 },
+        { name: "Carne", price: 3 },
+        { name: "Molho Verde", price: 0.5 },
+        { name: "Ovo", price: 3.00 },
+        { name: "Queijo", price: 2.00 }
+
+    ];
+
+    let html = "";
+    ingredients.forEach((ingredient) => {
+        selectedItem.ingredients[ingredient.name] = 1; // Ingredientes padrões vêm com 1 unidade
+        html += `
+            <div class="ingredient-item">
+                <span>${ingredient.name} ${ingredient.price > 0 ? `(+R$${ingredient.price.toFixed(2)})` : ""}</span>
+                <button onclick="updateIngredient('${ingredient.name}', -1, ${ingredient.price})">-</button>
+                <span id="${ingredient.name}-qty">1</span>
+                <button onclick="updateIngredient('${ingredient.name}', 1, ${ingredient.price})">+</button>
+            </div>
+        `;
+    });
+
+    return html;
+}
+
+function updateIngredient(ingredient, change, price) {
+    let currentQty = selectedItem.ingredients[ingredient] || 0;
+    let newQty = currentQty + change;
+
+    if (newQty < 0) return; // Não pode ter ingrediente negativo
+
+    selectedItem.ingredients[ingredient] = newQty;
+    document.getElementById(`${ingredient}-qty`).textContent = newQty;
+
+    // Ajustar preço
+    selectedItem.price += change * price;
+}
+
 // Confirma a personalização e adiciona ao carrinho
 function confirmCustomization() {
     let customizations = [];
     let finalPrice = selectedItem.price ?? 0;
+	
+    let finalIngredients = [];
+    for (let ingredient in selectedItem.ingredients) {
+        let quantity = selectedItem.ingredients[ingredient];
 
+        if (quantity === 0) {
+            finalIngredients.push(`sem ${ingredient}`);
+        } else if (quantity > 1) { // Garantindo que ingredientes adicionados apareçam
+            finalIngredients.push(`+${ingredient} (x${quantity})`);
+            finalPrice += quantity * precosTamanhos[ingredient] || 0; // Ajustando preço corretamente
+        }
+    }if (finalIngredients.length > 0) {
+        customizations.push(finalIngredients.join(", "));
+	}
     if (selectedItem.name.includes("Burguer") || selectedItem.name.includes("X") || selectedItem.name.includes("Combo") || selectedItem.name.includes("Big") || selectedItem.name.includes("Montanha")) {
         let selectedMeat = document.querySelector('input[name="meat"]:checked')?.value;
         if (selectedMeat) customizations.push(selectedMeat);
@@ -375,6 +440,7 @@ function confirmCustomization() {
         }
 		customizations.push(selectedBolo.value);
     }
+	 selectedItem.ingredientsList = finalIngredients;
 
     cart.push({ name: `${selectedItem.name} (${customizations.join(", ")})`, price: finalPrice, quantity: 1 });
 
